@@ -19,48 +19,34 @@ class DataController: ObservableObject {
         }
     }
 
-    func save(context: NSManagedObjectContext) {
+    func addOrUpdateExpense(
+        with model: ExpenseDataModel?,
+        type: String,
+        subtitle: String?,
+        amount: Double,
+        category: String,
+        occurredOn: Date,
+        context: NSManagedObjectContext
+    ) -> Bool {
+        let expense: ExpenseDataModel
+        if let model {
+            expense = model
+        } else {
+            expense = ExpenseDataModel(context: context)
+            expense.id = UUID()
+            expense.createdAt = Date()
+        }
+        expense.type = type
+        expense.subtitle = subtitle
+        expense.amount = amount
+        expense.category = category
+
         do {
             try context.save()
-            print("Data saved!")
+            return true
         } catch {
-            print("Data could not be saved, possibly not enough storage space")
+            print("Failed to save expense: \(error.localizedDescription)")
+            return false
         }
-    }
-
-    func addExpense(
-        title: String,
-        subtitle: String,
-        amount: Double,
-        category: String,
-        context: NSManagedObjectContext
-    ) {
-        let expense = Expense(context: context)
-        expense.id = UUID()
-        expense.createdAt = Date()
-        expense.updatedAt = Date()
-        expense.title = title
-        expense.subtitle = subtitle
-        expense.amount = amount
-        expense.category = category
-
-        save(context: context)
-    }
-
-    func editExpense(
-        expense: Expense,
-        title: String,
-        subtitle: String,
-        amount: Double,
-        category: String,
-        context: NSManagedObjectContext
-    ) {
-        expense.updatedAt = Date()
-        expense.title = title
-        expense.subtitle = subtitle
-        expense.amount = amount
-        expense.category = category
-
-        save(context: context)
     }
 }

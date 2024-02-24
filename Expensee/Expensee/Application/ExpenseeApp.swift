@@ -15,6 +15,7 @@ struct ExpenseeApp: App {
         WindowGroup {
             ContentView()
                 .environment(\.managedObjectContext, dataController.container.viewContext)
+                .environment(\.colorScheme, .dark)
         }
     }
 }

@@ -13,6 +13,14 @@
 		71B195682B8A1869001890C9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71B195672B8A1869001890C9 /* Preview Assets.xcassets */; };
 		71B195752B8A24E6001890C9 /* ExpenseModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 71B195732B8A24E6001890C9 /* ExpenseModel.xcdatamodeld */; };
 		71B195772B8A26DF001890C9 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B195762B8A26DF001890C9 /* DataController.swift */; };
+		71B1957A2B8A3423001890C9 /* AddExpense.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B195792B8A3423001890C9 /* AddExpense.swift */; };
+		71B1957C2B8A34BA001890C9 /* AddExpenseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B1957B2B8A34BA001890C9 /* AddExpenseViewModel.swift */; };
+		71B1957F2B8A35FB001890C9 /* CustomNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B1957E2B8A35FB001890C9 /* CustomNavigationView.swift */; };
+		71B195842B8A4EC1001890C9 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B195832B8A4EC1001890C9 /* HomeView.swift */; };
+		71B1958E2B8A620B001890C9 /* ExpenseDataModelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B1958D2B8A620B001890C9 /* ExpenseDataModelExtension.swift */; };
+		71B195912B8A6397001890C9 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B195902B8A6397001890C9 /* ColorExtension.swift */; };
+		71B195932B8A67F7001890C9 /* PrimaryButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B195922B8A67F7001890C9 /* PrimaryButtonView.swift */; };
+		71B195952B8A6902001890C9 /* CustomTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B195942B8A6902001890C9 /* CustomTextFieldView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +31,14 @@
 		71B195672B8A1869001890C9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		71B195742B8A24E6001890C9 /* ExpenseModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ExpenseModel.xcdatamodel; sourceTree = "<group>"; };
 		71B195762B8A26DF001890C9 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		71B195792B8A3423001890C9 /* AddExpense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExpense.swift; sourceTree = "<group>"; };
+		71B1957B2B8A34BA001890C9 /* AddExpenseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExpenseViewModel.swift; sourceTree = "<group>"; };
+		71B1957E2B8A35FB001890C9 /* CustomNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationView.swift; sourceTree = "<group>"; };
+		71B195832B8A4EC1001890C9 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		71B1958D2B8A620B001890C9 /* ExpenseDataModelExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseDataModelExtension.swift; sourceTree = "<group>"; };
+		71B195902B8A6397001890C9 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
+		71B195922B8A67F7001890C9 /* PrimaryButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButtonView.swift; sourceTree = "<group>"; };
+		71B195942B8A6902001890C9 /* CustomTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFieldView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +107,8 @@
 		71B195702B8A242C001890C9 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				71B1958F2B8A6389001890C9 /* Extensions */,
+				71B1957D2B8A35EA001890C9 /* Views */,
 				71B195712B8A2447001890C9 /* Models */,
 			);
 			path = Common;
@@ -101,6 +119,7 @@
 			children = (
 				71B195732B8A24E6001890C9 /* ExpenseModel.xcdatamodeld */,
 				71B195762B8A26DF001890C9 /* DataController.swift */,
+				71B1958D2B8A620B001890C9 /* ExpenseDataModelExtension.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -108,9 +127,46 @@
 		71B195722B8A2452001890C9 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				71B195822B8A4EAD001890C9 /* Home */,
+				71B195782B8A2F8C001890C9 /* AddExpense */,
 				71B195622B8A1867001890C9 /* ContentView.swift */,
 			);
 			path = Modules;
+			sourceTree = "<group>";
+		};
+		71B195782B8A2F8C001890C9 /* AddExpense */ = {
+			isa = PBXGroup;
+			children = (
+				71B195792B8A3423001890C9 /* AddExpense.swift */,
+				71B1957B2B8A34BA001890C9 /* AddExpenseViewModel.swift */,
+			);
+			path = AddExpense;
+			sourceTree = "<group>";
+		};
+		71B1957D2B8A35EA001890C9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				71B1957E2B8A35FB001890C9 /* CustomNavigationView.swift */,
+				71B195922B8A67F7001890C9 /* PrimaryButtonView.swift */,
+				71B195942B8A6902001890C9 /* CustomTextFieldView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		71B195822B8A4EAD001890C9 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				71B195832B8A4EC1001890C9 /* HomeView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		71B1958F2B8A6389001890C9 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				71B195902B8A6397001890C9 /* ColorExtension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -183,10 +239,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71B195842B8A4EC1001890C9 /* HomeView.swift in Sources */,
+				71B1957F2B8A35FB001890C9 /* CustomNavigationView.swift in Sources */,
+				71B1957A2B8A3423001890C9 /* AddExpense.swift in Sources */,
 				71B195632B8A1867001890C9 /* ContentView.swift in Sources */,
 				71B195772B8A26DF001890C9 /* DataController.swift in Sources */,
+				71B195932B8A67F7001890C9 /* PrimaryButtonView.swift in Sources */,
 				71B195752B8A24E6001890C9 /* ExpenseModel.xcdatamodeld in Sources */,
+				71B1958E2B8A620B001890C9 /* ExpenseDataModelExtension.swift in Sources */,
 				71B195612B8A1867001890C9 /* ExpenseeApp.swift in Sources */,
+				71B1957C2B8A34BA001890C9 /* AddExpenseViewModel.swift in Sources */,
+				71B195912B8A6397001890C9 /* ColorExtension.swift in Sources */,
+				71B195952B8A6902001890C9 /* CustomTextFieldView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
