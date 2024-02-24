@@ -11,7 +11,9 @@ struct AddExpense: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @Environment(\.managedObjectContext) var context
     @StateObject var viewModel: AddExpenseViewModel
-    
+    @State var showTypeDropdown = false
+    @State var showCategoryDropdown = false
+
     var body: some View {
         VStack(spacing: 20) {
             CustomNavigationView(
@@ -20,13 +22,29 @@ struct AddExpense: View {
                     presentationMode.wrappedValue.dismiss()
                 }
             )
-            CustomTextFieldView(text: $viewModel.type, placeholderText: "Uplata ili isplata")
+            DropdownButtonView(
+                shouldShowDropdown: $showTypeDropdown,
+                displayText: viewModel.typeDisplayText,
+                options: viewModel.typeOptions
+            ) { selectedOption in
+                if let selectedType = ExpenseType(rawValue: selectedOption) {
+                    viewModel.type = selectedType
+                }
+            }
+            DropdownButtonView(
+                shouldShowDropdown: $showCategoryDropdown,
+                displayText: viewModel.categoryDisplayText,
+                options: viewModel.categoryOptions
+            ) { selectedOption in
+                if let selectedCategory = ExpenseCategory(rawValue: selectedOption) {
+                    viewModel.category = selectedCategory
+                }
+            }
             CustomTextFieldView(text: $viewModel.amount, placeholderText: "Iznos")
-            CustomTextFieldView(text: $viewModel.category, placeholderText: "Kategorija")
             CustomTextFieldView(text: $viewModel.subtitle, placeholderText: "Opis transakcije")
             HStack {
                 DatePicker(
-                    "PickerView",
+                    "Date Picker",
                     selection: $viewModel.createdAt,
                     displayedComponents: [.date]
                 )

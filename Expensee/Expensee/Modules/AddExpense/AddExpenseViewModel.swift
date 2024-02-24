@@ -9,33 +9,49 @@ import Foundation
 import CoreData
 
 class AddExpenseViewModel: ObservableObject {
-    @Published var type = ""
+    @Published var type: ExpenseType = .income
     @Published var amount = ""
     @Published var subtitle = ""
-    @Published var category = ""
+    @Published var category: ExpenseCategory = .other
     @Published var createdAt = Date()
-
     @Published var saveSuccessful = false
 
     private let dataController: DataController
     private let expenseModel: ExpenseDataModel?
+    
+    let typeOptions: [DropdownOption] = ExpenseType.allCases.map {
+        DropdownOption(key: $0.rawValue, value: $0.text)
+    }
+
+    let categoryOptions = ExpenseCategory.allCases.map {
+        DropdownOption(key: $0.rawValue, value: $0.text)
+    }
 
     init(expenseModel: ExpenseDataModel?) {
         self.expenseModel = expenseModel
         dataController = DataController()
 
         if let expense = expenseModel {
-            type = expense.type ?? ""
+            type = expense.expenseType ?? .income
             amount = String(expense.amount)
             subtitle = expense.subtitle ?? ""
-            category = expense.category ?? ""
+            category = expense.expenseCategory ?? .other
             createdAt = expense.createdAt ?? Date()
         }
     }
 
+    var typeDisplayText: String {
+        type.text
+    }
+
+    var categoryDisplayText: String {
+        category.text
+    }
+    
     func saveExpense(managedObjectContext: NSManagedObjectContext) {
         let amountStr = amount.trimmingCharacters(in: .whitespacesAndNewlines)
-        guard let amount = Double(amountStr) else {
+        guard let amount = Double(amountStr)
+        else {
             return
         }
 

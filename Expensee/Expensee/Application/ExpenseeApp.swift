@@ -13,7 +13,7 @@ struct ExpenseeApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            RootView()
                 .environment(\.managedObjectContext, dataController.container.viewContext)
                 .environment(\.colorScheme, .dark)
         }

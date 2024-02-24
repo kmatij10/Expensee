@@ -21,6 +21,7 @@ struct HomeView: View {
         VStack(spacing: 10) {
             CustomNavigationView(
                 title: "Add expense",
+                hasBackButton: false,
                 backButtonClick: {
                     presentationMode.wrappedValue.dismiss()
                 }

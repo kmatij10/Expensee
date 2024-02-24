@@ -21,10 +21,10 @@ class DataController: ObservableObject {
 
     func addOrUpdateExpense(
         with model: ExpenseDataModel?,
-        type: String,
+        type: ExpenseType,
         subtitle: String?,
         amount: Double,
-        category: String,
+        category: ExpenseCategory,
         occurredOn: Date,
         context: NSManagedObjectContext
     ) -> Bool {
@@ -36,10 +36,10 @@ class DataController: ObservableObject {
             expense.id = UUID()
             expense.createdAt = Date()
         }
-        expense.type = type
+        expense.expenseType = type
         expense.subtitle = subtitle
         expense.amount = amount
-        expense.category = category
+        expense.expenseCategory = category
 
         do {
             try context.save()

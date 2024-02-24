@@ -9,8 +9,14 @@ import SwiftUI
 
 struct CustomNavigationView: View {
     let title: String
-    let hasBackButton: Bool = true
+    let hasBackButton: Bool
     let backButtonClick: () -> ()
+
+    init(title: String, hasBackButton: Bool = true, backButtonClick: @escaping () -> Void) {
+        self.title = title
+        self.hasBackButton = hasBackButton
+        self.backButtonClick = backButtonClick
+    }
 
     var body: some View {
         ZStack {
@@ -18,15 +24,14 @@ struct CustomNavigationView: View {
                 if hasBackButton {
                     Button(action: { backButtonClick() }) {
                         Image(systemName: "chevron.left")
-                            .resizable()
-                            .frame(width: 24, height: 24)
+                            .frame(width: 24)
+                            .foregroundColor(.mainColor)
                     }
                 }
                 Spacer()
             }
             HStack {
                 Text(title)
-                if !hasBackButton { Spacer() }
             }
         }
         .padding(.top, 66)
