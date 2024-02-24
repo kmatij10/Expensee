@@ -47,8 +47,7 @@ struct AddExpense: View {
         .padding(.horizontal, 24)
         .edgesIgnoringSafeArea(.all)
         .background(Color.primaryColor)
-//        .navigationBarHidden(true)
-//        .navigationBarBackButtonHidden(true)
+        .navigationBarHidden(true)
         .onReceive(viewModel.$saveSuccessful) { close in
             if close { presentationMode.wrappedValue.dismiss() }
         }
