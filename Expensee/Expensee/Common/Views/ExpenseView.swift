@@ -16,10 +16,11 @@ struct ExpenseView: View {
             VStack(alignment: .leading, spacing: 6) {
                 HStack {
                     Text(expense.expenseCategory?.text ?? "")
+                        .font(.headline)
                         .foregroundColor(.mainColor)
                     Spacer()
                     Text(expense.amount.formattedCurrency)
-                        .foregroundColor(.mainColor)
+                        .foregroundColor(expense.expenseType == .income ? .greenPrimaryColor : .redPrimaryColor)
                 }
                 HStack {
                     Text(expense.subtitle ?? "")
