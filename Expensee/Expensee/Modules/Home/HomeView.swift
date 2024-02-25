@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Charts
 
 struct HomeView: View {
     let month: Int
@@ -23,6 +24,7 @@ struct HomeView: View {
                     incomeAmount: totalIncome(expenses: expenses).formattedCurrency,
                     outcomeAmount: totalOutcome(expenses: expenses).formattedCurrency
                 )
+                ExpensesChartView(expenses: expenses)
                 PrimaryButtonView(title: "Add transaction") {
                     showAddExpense = true
                 }

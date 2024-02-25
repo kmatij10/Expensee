@@ -27,6 +27,8 @@
 		71B195A02B8B438E001890C9 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B1959F2B8B438E001890C9 /* DateExtension.swift */; };
 		71B195A32B8B446A001890C9 /* ExpenseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B195A22B8B446A001890C9 /* ExpenseView.swift */; };
 		71B195A62B8B44B6001890C9 /* HomeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B195A52B8B44B6001890C9 /* HomeHeaderView.swift */; };
+		71B195A82B8B51E0001890C9 /* DictionaryExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B195A72B8B51E0001890C9 /* DictionaryExtension.swift */; };
+		71B195AA2B8B5211001890C9 /* ExpensesChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B195A92B8B5211001890C9 /* ExpensesChartView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +53,8 @@
 		71B1959F2B8B438E001890C9 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		71B195A22B8B446A001890C9 /* ExpenseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseView.swift; sourceTree = "<group>"; };
 		71B195A52B8B44B6001890C9 /* HomeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderView.swift; sourceTree = "<group>"; };
+		71B195A72B8B51E0001890C9 /* DictionaryExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryExtension.swift; sourceTree = "<group>"; };
+		71B195A92B8B5211001890C9 /* ExpensesChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesChartView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +167,7 @@
 				71B195942B8A6902001890C9 /* CustomTextFieldView.swift */,
 				71B195962B8A78E2001890C9 /* CustomDropdownView.swift */,
 				71B195A22B8B446A001890C9 /* ExpenseView.swift */,
+				71B195A92B8B5211001890C9 /* ExpensesChartView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -183,6 +188,7 @@
 				71B195902B8A6397001890C9 /* ColorExtension.swift */,
 				71B1959D2B8B4326001890C9 /* DoubleExtension.swift */,
 				71B1959F2B8B438E001890C9 /* DateExtension.swift */,
+				71B195A72B8B51E0001890C9 /* DictionaryExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -283,11 +289,13 @@
 				71B195772B8A26DF001890C9 /* DataController.swift in Sources */,
 				71B195932B8A67F7001890C9 /* PrimaryButtonView.swift in Sources */,
 				71B195A02B8B438E001890C9 /* DateExtension.swift in Sources */,
+				71B195AA2B8B5211001890C9 /* ExpensesChartView.swift in Sources */,
 				71B195A32B8B446A001890C9 /* ExpenseView.swift in Sources */,
 				71B195752B8A24E6001890C9 /* ExpenseModel.xcdatamodeld in Sources */,
 				71B195A62B8B44B6001890C9 /* HomeHeaderView.swift in Sources */,
 				71B1958E2B8A620B001890C9 /* ExpenseDataModelExtension.swift in Sources */,
 				71B195612B8A1867001890C9 /* ExpenseeApp.swift in Sources */,
+				71B195A82B8B51E0001890C9 /* DictionaryExtension.swift in Sources */,
 				71B1957C2B8A34BA001890C9 /* AddExpenseViewModel.swift in Sources */,
 				71B195912B8A6397001890C9 /* ColorExtension.swift in Sources */,
 				71B195952B8A6902001890C9 /* CustomTextFieldView.swift in Sources */,
@@ -439,9 +447,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.KristinaMatijasic.Expensee;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -468,9 +480,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.KristinaMatijasic.Expensee;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
