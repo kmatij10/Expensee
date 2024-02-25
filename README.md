@@ -61,10 +61,9 @@ A streamlined expense management app showcasing SwiftUI, CoreData, Charts, and M
     
 ## UI
 
-![](image01.png) |
-![](image02.png) |
-![](image03.png) |
-![](image04.png) |
+--- | --- | --- |--- |--- 
+![](image01.png) | ![](image02.png) | ![](image03.png) | ![](image04.png)
+
     
 ## Technologies
 
