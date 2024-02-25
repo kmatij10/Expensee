@@ -10,6 +10,7 @@ import SwiftUI
 
 struct ExpenseView: View {
     let expense: ExpenseDataModel
+    let action: () -> Void
 
     var body: some View {
         HStack {
@@ -36,5 +37,8 @@ struct ExpenseView: View {
         .padding(10)
         .background(Color.secondaryColor)
         .cornerRadius(4)
+        .onTapGesture {
+            action()
+        }
     }
 }

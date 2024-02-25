@@ -9,10 +9,10 @@ import Foundation
 import SwiftUI
 
 struct HomeContainerView: View {
-    @Environment(\.managedObjectContext) var managedObjectContext
+    @Environment(\.managedObjectContext) private var managedObjectContext
     @FetchRequest(
         sortDescriptors: [SortDescriptor(\ExpenseDataModel.createdAt, order: .reverse)]
-    ) var expenses: FetchedResults<ExpenseDataModel>
+    ) private var expenses: FetchedResults<ExpenseDataModel>
     let dataController: DataController
 
     var body: some View {

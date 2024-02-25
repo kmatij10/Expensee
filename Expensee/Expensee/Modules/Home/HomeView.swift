@@ -14,17 +14,22 @@ struct HomeView: View {
     let dataController: DataController
 
     @State private var showAddExpense = false
+    @State private var showDetails = false
+    @State private var expenseDetailsModel: ExpenseDataModel?
 
     var body: some View {
         ScrollView(showsIndicators: false) {
             VStack(spacing: 16) {
                 HomeHeaderView(
-                    month: getMonthName(from: month),
+                    month: month.monthName,
                     totalAmount: totalBalance(expenses: expenses).formattedCurrency,
                     incomeAmount: totalIncome(expenses: expenses).formattedCurrency,
                     outcomeAmount: totalOutcome(expenses: expenses).formattedCurrency
                 )
                 ExpensesChartView(expenses: expenses)
+                PrimaryButtonView(title: "See monthly details") {
+                    showDetails = true
+                }
                 PrimaryButtonView(title: "Add transaction") {
                     showAddExpense = true
                 }
@@ -37,7 +42,13 @@ struct HomeView: View {
                 .padding(8)
                 LazyVStack(spacing: 8) {
                     ForEach(expenses) { expense in
-                        ExpenseView(expense: expense)
+                        ExpenseView(
+                            expense: expense,
+                            action: {
+                                expenseDetailsModel = expense
+                                showAddExpense = true
+                            }
+                        )
                     }
                 }
                 Spacer()
@@ -45,14 +56,31 @@ struct HomeView: View {
             .navigationDestination(
                 isPresented: $showAddExpense,
                 destination: {
-                    let model = AddExpenseViewModel(expenseModel: nil, dataController: dataController)
-                    AddExpense(viewModel: model)
+                    let model = AddExpenseViewModel(
+                        expenseModel: expenseDetailsModel,
+                        dataController: dataController
+                    )
+                    AddExpenseView(viewModel: model)
+                }
+            )
+            .navigationDestination(
+                isPresented: $showDetails,
+                destination: {
+                    let model = MonthDetailsViewModel(
+                        dataController: dataController,
+                        expenses: expenses,
+                        month: month
+                    )
+                    MonthDetailsView(viewModel: model)
                 }
             )
             .frame(maxWidth: .infinity)
             .cornerRadius(4)
         }
         .padding(.horizontal, 24)
+        .onAppear {
+            expenseDetailsModel = nil
+        }
     }
 }
 
@@ -70,23 +98,5 @@ private extension HomeView {
 
     func totalOutcome(expenses: [ExpenseDataModel]) -> Double {
         return expenses.reduce(0) { $0 + ($1.expenseType == .outcome ? $1.amount : 0) }
-    }
-
-    func getMonthName(from monthNumber: Int) -> String {
-        let months = [
-            1: "January",
-            2: "February",
-            3: "March",
-            4: "April",
-            5: "May",
-            6: "June",
-            7: "July",
-            8: "August",
-            9: "September",
-            10: "October",
-            11: "November",
-            12: "December"
-        ]
-        return months[monthNumber] ?? "Unknown"
     }
 }

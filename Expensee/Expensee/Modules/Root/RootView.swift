@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct RootView: View {
-    @Environment(\.managedObjectContext) var managedObjectContext
+    @Environment(\.managedObjectContext) private var managedObjectContext
     var dataController: DataController
 
     var body: some View {

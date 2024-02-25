@@ -8,7 +8,7 @@
 import Foundation
 import CoreData
 
-class AddExpenseViewModel: ObservableObject {
+final class AddExpenseViewModel: ObservableObject {
     @Published var type: ExpenseType = .income
     @Published var amount = ""
     @Published var subtitle = ""

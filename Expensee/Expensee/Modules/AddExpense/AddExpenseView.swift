@@ -1,5 +1,5 @@
 //
-//  AddExpense.swift
+//  AddExpenseView.swift
 //  Expensee
 //
 //  Created by Kristina Matijasic on 24.02.2024..
@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-struct AddExpense: View {
-    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-    @Environment(\.managedObjectContext) var context
+struct AddExpenseView: View {
+    @Environment(\.presentationMode) private var presentationMode: Binding<PresentationMode>
+    @Environment(\.managedObjectContext) private var managedObjectContext
     @StateObject var viewModel: AddExpenseViewModel
     @State var showTypeDropdown = false
     @State var showCategoryDropdown = false
@@ -58,7 +58,7 @@ struct AddExpense: View {
             .background(Color.secondaryColor)
             .cornerRadius(4)
             PrimaryButtonView(title: "Spremi transakciju") {
-                viewModel.saveExpense(managedObjectContext: context)
+                viewModel.saveExpense(managedObjectContext: managedObjectContext)
             }
             Spacer()
         }

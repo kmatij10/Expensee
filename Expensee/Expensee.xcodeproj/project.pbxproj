@@ -13,7 +13,7 @@
 		71B195682B8A1869001890C9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71B195672B8A1869001890C9 /* Preview Assets.xcassets */; };
 		71B195752B8A24E6001890C9 /* ExpenseModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 71B195732B8A24E6001890C9 /* ExpenseModel.xcdatamodeld */; };
 		71B195772B8A26DF001890C9 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B195762B8A26DF001890C9 /* DataController.swift */; };
-		71B1957A2B8A3423001890C9 /* AddExpense.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B195792B8A3423001890C9 /* AddExpense.swift */; };
+		71B1957A2B8A3423001890C9 /* AddExpenseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B195792B8A3423001890C9 /* AddExpenseView.swift */; };
 		71B1957C2B8A34BA001890C9 /* AddExpenseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B1957B2B8A34BA001890C9 /* AddExpenseViewModel.swift */; };
 		71B1957F2B8A35FB001890C9 /* CustomNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B1957E2B8A35FB001890C9 /* CustomNavigationView.swift */; };
 		71B195842B8A4EC1001890C9 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B195832B8A4EC1001890C9 /* HomeView.swift */; };
@@ -29,6 +29,10 @@
 		71B195A62B8B44B6001890C9 /* HomeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B195A52B8B44B6001890C9 /* HomeHeaderView.swift */; };
 		71B195A82B8B51E0001890C9 /* DictionaryExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B195A72B8B51E0001890C9 /* DictionaryExtension.swift */; };
 		71B195AA2B8B5211001890C9 /* ExpensesChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B195A92B8B5211001890C9 /* ExpensesChartView.swift */; };
+		71B195AD2B8B53BF001890C9 /* MonthDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B195AC2B8B53BF001890C9 /* MonthDetailsView.swift */; };
+		71B195AF2B8B53D0001890C9 /* MonthDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B195AE2B8B53D0001890C9 /* MonthDetailsViewModel.swift */; };
+		71B195B12B8B5EAA001890C9 /* ExpenseCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B195B02B8B5EAA001890C9 /* ExpenseCategoryView.swift */; };
+		71B195B32B8B6388001890C9 /* IntExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B195B22B8B6388001890C9 /* IntExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,7 +43,7 @@
 		71B195672B8A1869001890C9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		71B195742B8A24E6001890C9 /* ExpenseModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ExpenseModel.xcdatamodel; sourceTree = "<group>"; };
 		71B195762B8A26DF001890C9 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
-		71B195792B8A3423001890C9 /* AddExpense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExpense.swift; sourceTree = "<group>"; };
+		71B195792B8A3423001890C9 /* AddExpenseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExpenseView.swift; sourceTree = "<group>"; };
 		71B1957B2B8A34BA001890C9 /* AddExpenseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExpenseViewModel.swift; sourceTree = "<group>"; };
 		71B1957E2B8A35FB001890C9 /* CustomNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationView.swift; sourceTree = "<group>"; };
 		71B195832B8A4EC1001890C9 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -55,6 +59,10 @@
 		71B195A52B8B44B6001890C9 /* HomeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderView.swift; sourceTree = "<group>"; };
 		71B195A72B8B51E0001890C9 /* DictionaryExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryExtension.swift; sourceTree = "<group>"; };
 		71B195A92B8B5211001890C9 /* ExpensesChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesChartView.swift; sourceTree = "<group>"; };
+		71B195AC2B8B53BF001890C9 /* MonthDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthDetailsView.swift; sourceTree = "<group>"; };
+		71B195AE2B8B53D0001890C9 /* MonthDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthDetailsViewModel.swift; sourceTree = "<group>"; };
+		71B195B02B8B5EAA001890C9 /* ExpenseCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseCategoryView.swift; sourceTree = "<group>"; };
+		71B195B22B8B6388001890C9 /* IntExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +151,7 @@
 		71B195722B8A2452001890C9 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				71B195AB2B8B53AD001890C9 /* MonthDetails */,
 				71B195982B8A8442001890C9 /* Root */,
 				71B195822B8A4EAD001890C9 /* Home */,
 				71B195782B8A2F8C001890C9 /* AddExpense */,
@@ -153,7 +162,7 @@
 		71B195782B8A2F8C001890C9 /* AddExpense */ = {
 			isa = PBXGroup;
 			children = (
-				71B195792B8A3423001890C9 /* AddExpense.swift */,
+				71B195792B8A3423001890C9 /* AddExpenseView.swift */,
 				71B1957B2B8A34BA001890C9 /* AddExpenseViewModel.swift */,
 			);
 			path = AddExpense;
@@ -168,6 +177,7 @@
 				71B195962B8A78E2001890C9 /* CustomDropdownView.swift */,
 				71B195A22B8B446A001890C9 /* ExpenseView.swift */,
 				71B195A92B8B5211001890C9 /* ExpensesChartView.swift */,
+				71B195B02B8B5EAA001890C9 /* ExpenseCategoryView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -189,6 +199,7 @@
 				71B1959D2B8B4326001890C9 /* DoubleExtension.swift */,
 				71B1959F2B8B438E001890C9 /* DateExtension.swift */,
 				71B195A72B8B51E0001890C9 /* DictionaryExtension.swift */,
+				71B195B22B8B6388001890C9 /* IntExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -207,6 +218,15 @@
 				71B195A52B8B44B6001890C9 /* HomeHeaderView.swift */,
 			);
 			path = Header;
+			sourceTree = "<group>";
+		};
+		71B195AB2B8B53AD001890C9 /* MonthDetails */ = {
+			isa = PBXGroup;
+			children = (
+				71B195AC2B8B53BF001890C9 /* MonthDetailsView.swift */,
+				71B195AE2B8B53D0001890C9 /* MonthDetailsViewModel.swift */,
+			);
+			path = MonthDetails;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -284,11 +304,14 @@
 				71B1959C2B8B42CF001890C9 /* HomeContainerView.swift in Sources */,
 				71B1957F2B8A35FB001890C9 /* CustomNavigationView.swift in Sources */,
 				71B195972B8A78E2001890C9 /* CustomDropdownView.swift in Sources */,
-				71B1957A2B8A3423001890C9 /* AddExpense.swift in Sources */,
+				71B195B32B8B6388001890C9 /* IntExtension.swift in Sources */,
+				71B1957A2B8A3423001890C9 /* AddExpenseView.swift in Sources */,
 				71B195632B8A1867001890C9 /* RootView.swift in Sources */,
 				71B195772B8A26DF001890C9 /* DataController.swift in Sources */,
 				71B195932B8A67F7001890C9 /* PrimaryButtonView.swift in Sources */,
 				71B195A02B8B438E001890C9 /* DateExtension.swift in Sources */,
+				71B195AF2B8B53D0001890C9 /* MonthDetailsViewModel.swift in Sources */,
+				71B195AD2B8B53BF001890C9 /* MonthDetailsView.swift in Sources */,
 				71B195AA2B8B5211001890C9 /* ExpensesChartView.swift in Sources */,
 				71B195A32B8B446A001890C9 /* ExpenseView.swift in Sources */,
 				71B195752B8A24E6001890C9 /* ExpenseModel.xcdatamodeld in Sources */,
@@ -298,6 +321,7 @@
 				71B195A82B8B51E0001890C9 /* DictionaryExtension.swift in Sources */,
 				71B1957C2B8A34BA001890C9 /* AddExpenseViewModel.swift in Sources */,
 				71B195912B8A6397001890C9 /* ColorExtension.swift in Sources */,
+				71B195B12B8B5EAA001890C9 /* ExpenseCategoryView.swift in Sources */,
 				71B195952B8A6902001890C9 /* CustomTextFieldView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
