@@ -9,7 +9,6 @@ import SwiftUI
 
 struct AddExpenseView: View {
     @Environment(\.presentationMode) private var presentationMode: Binding<PresentationMode>
-    @Environment(\.managedObjectContext) private var managedObjectContext
     @StateObject var viewModel: AddExpenseViewModel
     @State var showTypeDropdown = false
     @State var showCategoryDropdown = false
@@ -58,7 +57,7 @@ struct AddExpenseView: View {
             .background(Color.secondaryColor)
             .cornerRadius(4)
             PrimaryButtonView(title: viewModel.titleText) {
-                viewModel.saveExpense(managedObjectContext: managedObjectContext)
+                viewModel.saveExpense()
             }
             Spacer()
         }

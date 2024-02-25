@@ -11,6 +11,7 @@ import SwiftUI
 struct ExpenseView: View {
     let expense: ExpenseDataModel
     let action: () -> Void
+    let deleteAction: () -> Void
 
     var body: some View {
         HStack {
@@ -21,7 +22,10 @@ struct ExpenseView: View {
                         .foregroundColor(.mainColor)
                     Spacer()
                     Text(expense.amount.formattedCurrency)
-                        .foregroundColor(expense.expenseType == .income ? .greenPrimaryColor : .redPrimaryColor)
+                        .foregroundColor(expense.expenseType == .income ? 
+                            .greenPrimaryColor :
+                            .redPrimaryColor
+                        )
                 }
                 HStack {
                     Text(expense.subtitle ?? "")
@@ -39,6 +43,14 @@ struct ExpenseView: View {
         .cornerRadius(4)
         .onTapGesture {
             action()
+        }
+        .contextMenu {
+            Button(action: action) {
+                Label("Edit", systemImage: "pencil")
+            }
+            Button(action: deleteAction) {
+                Label("Delete", systemImage: "trash")
+            }
         }
     }
 }

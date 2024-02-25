@@ -18,7 +18,7 @@ final class AddExpenseViewModel: ObservableObject {
 
     private let dataController: DataController
     private let expenseModel: ExpenseDataModel?
-    
+
     let typeOptions: [DropdownOption] = ExpenseType.allCases.map {
         DropdownOption(key: $0.rawValue, value: $0.text)
     }
@@ -52,7 +52,7 @@ final class AddExpenseViewModel: ObservableObject {
         category.text
     }
     
-    func saveExpense(managedObjectContext: NSManagedObjectContext) {
+    func saveExpense() {
         let amountStr = amount.trimmingCharacters(in: .whitespacesAndNewlines)
         guard let amount = Double(amountStr)
         else {
@@ -65,8 +65,7 @@ final class AddExpenseViewModel: ObservableObject {
             subtitle: subtitle,
             amount: amount,
             category: category,
-            createdAt: createdAt,
-            context: managedObjectContext
+            createdAt: createdAt
         )
 
         if success {

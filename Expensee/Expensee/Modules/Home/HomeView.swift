@@ -9,30 +9,26 @@ import SwiftUI
 import Charts
 
 struct HomeView: View {
-    let month: Int
-    let expenses: [ExpenseDataModel]
-    let dataController: DataController
-
+    @StateObject var viewModel: HomeViewModel
     @State private var showAddExpense = false
     @State private var showDetails = false
     @State private var expenseDetailsModel: ExpenseDataModel?
-    private let maxAngle: Double = 270
 
     var body: some View {
         ScrollView(showsIndicators: false) {
             VStack(spacing: 16) {
                 HomeHeaderView(
-                    month: month.monthName,
-                    totalAmount: totalBalance(expenses: expenses).formattedCurrency,
-                    incomeAmount: totalIncome(expenses: expenses).formattedCurrency,
-                    outcomeAmount: totalOutcome(expenses: expenses).formattedCurrency
+                    month: viewModel.month.monthName,
+                    totalAmount: viewModel.totalBalance.formattedCurrency,
+                    incomeAmount: viewModel.totalIncome.formattedCurrency,
+                    outcomeAmount: viewModel.totalOutcome.formattedCurrency
                 )
                 ZStack {
-                    ArcShape(end: maxAngle, width: 10)
+                    ArcShape(end: viewModel.maxAngle, width: 10)
                         .fill(Color.gray.opacity(0.3))
-                    ArcShape(end: balanceAngle, width: 15)
+                    ArcShape(end: viewModel.balanceAngle, width: 15)
                         .fill(Color.primaryButtonColor)
-                    Text(totalBalance(expenses: expenses).formattedCurrency)
+                    Text(viewModel.totalBalance.formattedCurrency)
                         .font(.title)
                         .foregroundColor(.mainColor)
                     }
@@ -51,12 +47,16 @@ struct HomeView: View {
                 }
                 .padding(.vertical, 16)
                 LazyVStack(spacing: 8) {
-                    ForEach(expenses) { expense in
+                    ForEach(viewModel.expenses) { expense in
                         ExpenseView(
                             expense: expense,
                             action: {
                                 expenseDetailsModel = expense
                                 showAddExpense = true
+                            },
+                            deleteAction: {
+                                viewModel.containerViewModel
+                                    .deleteExpense(expense: expense)
                             }
                         )
                     }
@@ -68,7 +68,7 @@ struct HomeView: View {
                 destination: {
                     let model = AddExpenseViewModel(
                         expenseModel: expenseDetailsModel,
-                        dataController: dataController
+                        dataController: viewModel.dataController
                     )
                     AddExpenseView(viewModel: model)
                 }
@@ -77,9 +77,9 @@ struct HomeView: View {
                 isPresented: $showDetails,
                 destination: {
                     let model = MonthDetailsViewModel(
-                        dataController: dataController,
-                        expenses: expenses,
-                        month: month
+                        dataController: viewModel.dataController,
+                        expenses: viewModel.expenses,
+                        month: viewModel.month
                     )
                     MonthDetailsView(viewModel: model)
                 }
@@ -91,29 +91,5 @@ struct HomeView: View {
         .onAppear {
             expenseDetailsModel = nil
         }
-    }
-}
-
-private extension HomeView {
-
-    private var balanceAngle: Double {
-        let balancePercentage = totalIncome(expenses: expenses) > 0 ? 
-        (totalBalance(expenses: expenses) / totalIncome(expenses: expenses)) :
-        0
-        return maxAngle * balancePercentage
-    }
-
-    func totalBalance(expenses: [ExpenseDataModel]) -> Double {
-        let totalIncome = totalIncome(expenses: expenses)
-        let totalOutcome = totalOutcome(expenses: expenses)
-        return totalIncome - totalOutcome
-    }
-
-    func totalIncome(expenses: [ExpenseDataModel]) -> Double {
-        return expenses.reduce(0) { $0 + ($1.expenseType == .income ? $1.amount : 0) }
-    }
-
-    func totalOutcome(expenses: [ExpenseDataModel]) -> Double {
-        return expenses.reduce(0) { $0 + ($1.expenseType == .outcome ? $1.amount : 0) }
     }
 }

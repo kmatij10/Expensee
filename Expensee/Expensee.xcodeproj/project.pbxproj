@@ -34,6 +34,8 @@
 		71B195B12B8B5EAA001890C9 /* ExpenseCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B195B02B8B5EAA001890C9 /* ExpenseCategoryView.swift */; };
 		71B195B32B8B6388001890C9 /* IntExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B195B22B8B6388001890C9 /* IntExtension.swift */; };
 		71B195B62B8B645B001890C9 /* ArcShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B195B52B8B645B001890C9 /* ArcShape.swift */; };
+		71B195B82B8B715F001890C9 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B195B72B8B715F001890C9 /* HomeViewModel.swift */; };
+		71B195BB2B8B78D6001890C9 /* HomeContainerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B195BA2B8B78D6001890C9 /* HomeContainerViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +67,8 @@
 		71B195B02B8B5EAA001890C9 /* ExpenseCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseCategoryView.swift; sourceTree = "<group>"; };
 		71B195B22B8B6388001890C9 /* IntExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntExtension.swift; sourceTree = "<group>"; };
 		71B195B52B8B645B001890C9 /* ArcShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArcShape.swift; sourceTree = "<group>"; };
+		71B195B72B8B715F001890C9 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		71B195BA2B8B78D6001890C9 /* HomeContainerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeContainerViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,9 +192,10 @@
 		71B195822B8A4EAD001890C9 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				71B195B92B8B73B2001890C9 /* Container */,
 				71B195A42B8B44A7001890C9 /* Header */,
 				71B195832B8A4EC1001890C9 /* HomeView.swift */,
-				71B1959B2B8B42CF001890C9 /* HomeContainerView.swift */,
+				71B195B72B8B715F001890C9 /* HomeViewModel.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -238,6 +243,15 @@
 				71B195B52B8B645B001890C9 /* ArcShape.swift */,
 			);
 			path = Shape;
+			sourceTree = "<group>";
+		};
+		71B195B92B8B73B2001890C9 /* Container */ = {
+			isa = PBXGroup;
+			children = (
+				71B1959B2B8B42CF001890C9 /* HomeContainerView.swift */,
+				71B195BA2B8B78D6001890C9 /* HomeContainerViewModel.swift */,
+			);
+			path = Container;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -328,9 +342,11 @@
 				71B195752B8A24E6001890C9 /* ExpenseModel.xcdatamodeld in Sources */,
 				71B195A62B8B44B6001890C9 /* HomeHeaderView.swift in Sources */,
 				71B1958E2B8A620B001890C9 /* ExpenseDataModelExtension.swift in Sources */,
+				71B195BB2B8B78D6001890C9 /* HomeContainerViewModel.swift in Sources */,
 				71B195612B8A1867001890C9 /* ExpenseeApp.swift in Sources */,
 				71B195A82B8B51E0001890C9 /* DictionaryExtension.swift in Sources */,
 				71B1957C2B8A34BA001890C9 /* AddExpenseViewModel.swift in Sources */,
+				71B195B82B8B715F001890C9 /* HomeViewModel.swift in Sources */,
 				71B195B62B8B645B001890C9 /* ArcShape.swift in Sources */,
 				71B195912B8A6397001890C9 /* ColorExtension.swift in Sources */,
 				71B195B12B8B5EAA001890C9 /* ExpenseCategoryView.swift in Sources */,

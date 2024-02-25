@@ -8,12 +8,11 @@
 import SwiftUI
 
 struct RootView: View {
-    @Environment(\.managedObjectContext) private var managedObjectContext
     var dataController: DataController
 
     var body: some View {
         NavigationStack {
-            HomeContainerView(dataController: dataController)
+            HomeContainerView(viewModel: HomeContainerViewModel(dataController: dataController))
         }
     }
 }
