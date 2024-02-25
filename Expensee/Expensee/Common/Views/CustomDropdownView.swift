@@ -10,9 +10,9 @@ import SwiftUI
 
 struct DropdownOptionView: View {
     @Binding var shouldShowDropdown: Bool
-    var value: String
-    var key: String
-    var action: (String) -> Void
+    let value: String
+    let key: String
+    let action: (String) -> Void
 
     var body: some View {
         Button(action: {
@@ -30,8 +30,8 @@ struct DropdownOptionView: View {
 
 struct DropdownOptionsListView: View {
     @Binding var shouldShowDropdown: Bool
-    var options: [DropdownOption]
-    var action: (String) -> Void
+    let options: [DropdownOption]
+    let action: (String) -> Void
 
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
@@ -56,9 +56,9 @@ struct DropdownOptionsListView: View {
 
 struct DropdownButtonView: View {
     @Binding var shouldShowDropdown: Bool
-    var displayText: String
-    var options: [DropdownOption]
-    var action: (String) -> Void
+    let displayText: String
+    let options: [DropdownOption]
+    let action: (String) -> Void
 
     var body: some View {
         VStack {
@@ -98,6 +98,6 @@ struct DropdownOption: Hashable {
     public static func == (lhs: DropdownOption, rhs: DropdownOption) -> Bool {
         return lhs.key == rhs.key
     }
-    var key: String
-    var value: String
+    let key: String
+    let value: String
 }

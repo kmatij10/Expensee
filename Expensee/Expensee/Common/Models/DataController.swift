@@ -25,7 +25,7 @@ class DataController: ObservableObject {
         subtitle: String?,
         amount: Double,
         category: ExpenseCategory,
-        occurredOn: Date,
+        createdAt: Date,
         context: NSManagedObjectContext
     ) -> Bool {
         let expense: ExpenseDataModel
@@ -34,8 +34,8 @@ class DataController: ObservableObject {
         } else {
             expense = ExpenseDataModel(context: context)
             expense.id = UUID()
-            expense.createdAt = Date()
         }
+        expense.createdAt = createdAt
         expense.expenseType = type
         expense.subtitle = subtitle
         expense.amount = amount

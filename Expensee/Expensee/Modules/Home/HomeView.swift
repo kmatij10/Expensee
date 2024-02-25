@@ -6,14 +6,12 @@
 //
 
 import SwiftUI
-import CoreData
 
 struct HomeView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-    @Environment(\.managedObjectContext) var managedObjectContext
-    @FetchRequest(
-        sortDescriptors: [SortDescriptor(\ExpenseDataModel.createdAt, order: .reverse)]
-    ) var expenses: FetchedResults<ExpenseDataModel>
+    var month: Int
+    var expenses: [ExpenseDataModel]
+    var dataController: DataController
 
     @State private var showAddExpense = false
 
@@ -29,9 +27,10 @@ struct HomeView: View {
             ScrollView {
                 VStack(spacing: 16) {
                     HomeHeaderView(
-                        totalAmount: "3.300",
-                        income: "4.000",
-                        outcome: "300"
+                        month: getMonthName(from: month),
+                        totalAmount: totalBalance(expenses: expenses).formattedCurrency,
+                        incomeAmount: totalIncome(expenses: expenses).formattedCurrency,
+                        outcomeAmount: totalOutcome(expenses: expenses).formattedCurrency
                     )
                     PrimaryButtonView(title: "Add transaction") {
                         showAddExpense = true
@@ -43,15 +42,17 @@ struct HomeView: View {
                         Spacer()
                     }
                     .padding(8)
-                    ForEach(expenses) { expense in
-                        ExpenseTransactionView(expense: expense)
+                    LazyVStack(spacing: 8) {
+                        ForEach(expenses) { expense in
+                            ExpenseView(expense: expense)
+                        }
                     }
                     Spacer()
                 }
                 .navigationDestination(
                     isPresented: $showAddExpense,
                     destination: {
-                        let model = AddExpenseViewModel(expenseModel: nil)
+                        let model = AddExpenseViewModel(expenseModel: nil, dataController: dataController)
                         AddExpense(viewModel: model)
                     }
                 )
@@ -65,76 +66,37 @@ struct HomeView: View {
     }
 }
 
-struct ExpenseTransactionView: View {
-    @ObservedObject var expense: ExpenseDataModel
+private extension HomeView {
 
-    var body: some View {
-        HStack {
-            VStack(alignment: .leading, spacing: 6) {
-                HStack {
-                    Text(expense.category ?? "")
-                        .foregroundColor(.mainColor)
-                    Spacer()
-                    Text("\(expense.amount)")
-                        .foregroundColor(.mainColor)
-                }
-                HStack {
-                    Text(expense.subtitle ?? "")
-                        .foregroundColor(.mainColor)
-                    Spacer()
-                    Text(expense.category ?? "")
-                        .foregroundColor(.mainColor)
-                }
-            }.padding(.leading, 4)
-            Spacer()
-        }
-        .frame(maxWidth: .infinity)
-        .padding(10)
-        .background(Color.secondaryColor)
-        .cornerRadius(4)
+    func totalBalance(expenses: [ExpenseDataModel]) -> Double {
+        let totalIncome = totalIncome(expenses: expenses)
+        let totalOutcome = totalOutcome(expenses: expenses)
+        return totalIncome - totalOutcome
     }
-}
 
-struct HomeHeaderView: View {
-    let totalAmount: String
-    let income: String
-    let outcome: String
+    func totalIncome(expenses: [ExpenseDataModel]) -> Double {
+        return expenses.reduce(0) { $0 + ($1.expenseType == .income ? $1.amount : 0) }
+    }
 
-    var body: some View {
-        VStack(spacing: 8) {
-            Text("Total balance")
-                .font(.headline)
-                .foregroundColor(.mainColor)
-            Text(totalAmount)
-                .foregroundColor(.mainColor)
-        }
-        .frame(maxWidth: .infinity)
-        .padding(.vertical, 30)
-        .background(Color.secondaryColor)
-        .cornerRadius(4)
-        HStack(spacing: 8) {
-            VStack(spacing: 8) {
-                Text("Income")
-                    .font(.headline)
-                    .foregroundColor(.mainColor)
-                Text(income)
-                    .foregroundColor(.mainColor)
-            }
-            .frame(maxWidth: .infinity)
-            .padding(.vertical, 20)
-            .background(Color.secondaryColor)
-            .cornerRadius(4)
-            VStack(spacing: 8) {
-                Text("Outcome")
-                    .font(.headline)
-                    .foregroundColor(.mainColor)
-                Text(outcome)
-                    .foregroundColor(.mainColor)
-            }
-            .frame(maxWidth: .infinity)
-            .padding(.vertical, 20)
-            .background(Color.secondaryColor)
-            .cornerRadius(4)
-        }
+    func totalOutcome(expenses: [ExpenseDataModel]) -> Double {
+        return expenses.reduce(0) { $0 + ($1.expenseType == .outcome ? $1.amount : 0) }
+    }
+
+    func getMonthName(from monthNumber: Int) -> String {
+        let months = [
+            1: "January",
+            2: "February",
+            3: "March",
+            4: "April",
+            5: "May",
+            6: "June",
+            7: "July",
+            8: "August",
+            9: "September",
+            10: "October",
+            11: "November",
+            12: "December"
+        ]
+        return months[monthNumber] ?? "Unknown"
     }
 }

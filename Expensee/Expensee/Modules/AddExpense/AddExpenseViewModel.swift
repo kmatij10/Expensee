@@ -27,9 +27,9 @@ class AddExpenseViewModel: ObservableObject {
         DropdownOption(key: $0.rawValue, value: $0.text)
     }
 
-    init(expenseModel: ExpenseDataModel?) {
+    init(expenseModel: ExpenseDataModel?, dataController: DataController) {
         self.expenseModel = expenseModel
-        dataController = DataController()
+        self.dataController = dataController
 
         if let expense = expenseModel {
             type = expense.expenseType ?? .income
@@ -61,7 +61,7 @@ class AddExpenseViewModel: ObservableObject {
             subtitle: subtitle,
             amount: amount,
             category: category,
-            occurredOn: createdAt,
+            createdAt: createdAt,
             context: managedObjectContext
         )
 
