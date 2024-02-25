@@ -17,7 +17,7 @@ struct AddExpenseView: View {
     var body: some View {
         VStack(spacing: 20) {
             CustomNavigationView(
-                title: "Add transaction",
+                title: viewModel.titleText,
                 backButtonClick: {
                     presentationMode.wrappedValue.dismiss()
                 }
@@ -57,7 +57,7 @@ struct AddExpenseView: View {
             .accentColor(Color.mainColor)
             .background(Color.secondaryColor)
             .cornerRadius(4)
-            PrimaryButtonView(title: "Save transaction") {
+            PrimaryButtonView(title: viewModel.titleText) {
                 viewModel.saveExpense(managedObjectContext: managedObjectContext)
             }
             Spacer()

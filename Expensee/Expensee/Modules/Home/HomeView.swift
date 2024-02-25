@@ -40,16 +40,16 @@ struct HomeView: View {
                 PrimaryButtonView(title: "See monthly details") {
                     showDetails = true
                 }
-                PrimaryButtonView(title: "Add transaction") {
-                    showAddExpense = true
-                }
                 HStack {
                     Text("Recent Transactions")
                         .font(.headline)
                         .foregroundColor(.mainColor)
-                    Spacer()
+                    Spacer(minLength: 30)
+                    PrimaryButtonView(title: "Add transaction") {
+                        showAddExpense = true
+                    }
                 }
-                .padding(8)
+                .padding(.vertical, 16)
                 LazyVStack(spacing: 8) {
                     ForEach(expenses) { expense in
                         ExpenseView(

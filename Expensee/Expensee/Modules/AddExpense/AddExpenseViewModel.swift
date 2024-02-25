@@ -40,6 +40,10 @@ final class AddExpenseViewModel: ObservableObject {
         }
     }
 
+    var titleText: String {
+        expenseModel == nil ? "Add transaction" : "Update transaction"
+    }
+
     var typeDisplayText: String {
         type.text
     }
