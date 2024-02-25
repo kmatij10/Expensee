@@ -17,7 +17,7 @@ struct AddExpenseView: View {
     var body: some View {
         VStack(spacing: 20) {
             CustomNavigationView(
-                title: "Dodaj transakciju",
+                title: "Add transaction",
                 backButtonClick: {
                     presentationMode.wrappedValue.dismiss()
                 }
@@ -40,8 +40,8 @@ struct AddExpenseView: View {
                     viewModel.category = selectedCategory
                 }
             }
-            CustomTextFieldView(text: $viewModel.amount, placeholderText: "Iznos")
-            CustomTextFieldView(text: $viewModel.subtitle, placeholderText: "Opis transakcije")
+            CustomTextFieldView(text: $viewModel.amount, placeholderText: "Amount")
+            CustomTextFieldView(text: $viewModel.subtitle, placeholderText: "Description")
             HStack {
                 DatePicker(
                     "Date Picker",
@@ -57,7 +57,7 @@ struct AddExpenseView: View {
             .accentColor(Color.mainColor)
             .background(Color.secondaryColor)
             .cornerRadius(4)
-            PrimaryButtonView(title: "Spremi transakciju") {
+            PrimaryButtonView(title: "Save transaction") {
                 viewModel.saveExpense(managedObjectContext: managedObjectContext)
             }
             Spacer()

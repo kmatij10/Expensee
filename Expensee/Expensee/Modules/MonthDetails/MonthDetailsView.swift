@@ -21,11 +21,15 @@ struct MonthDetailsView: View {
                 }
             )
             ScrollView {
-                LazyVStack(spacing: 8) {
-                    ForEach(viewModel.expensesByCategory, id: \.category) { expenseByCategory in
-                        ExpenseCategoryView(viewModel: expenseByCategory)
+                VStack(spacing: 15) {
+                    ExpensesChartView(expensesByCategory: viewModel.expensesByCategory)
+                    LazyVStack(spacing: 10) {
+                        ForEach(viewModel.expensesByCategory, id: \.category) { expenseByCategory in
+                            ExpenseCategoryView(viewModel: expenseByCategory)
+                        }
                     }
                 }
+                .padding(.top, 15)
             }
         }
         .padding(.horizontal, 24)

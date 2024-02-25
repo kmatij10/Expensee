@@ -16,6 +16,7 @@ struct HomeView: View {
     @State private var showAddExpense = false
     @State private var showDetails = false
     @State private var expenseDetailsModel: ExpenseDataModel?
+    private let maxAngle: Double = 270
 
     var body: some View {
         ScrollView(showsIndicators: false) {
@@ -26,7 +27,16 @@ struct HomeView: View {
                     incomeAmount: totalIncome(expenses: expenses).formattedCurrency,
                     outcomeAmount: totalOutcome(expenses: expenses).formattedCurrency
                 )
-                ExpensesChartView(expenses: expenses)
+                ZStack {
+                    ArcShape(end: maxAngle, width: 10)
+                        .fill(Color.gray.opacity(0.3))
+                    ArcShape(end: balanceAngle, width: 15)
+                        .fill(Color.primaryButtonColor)
+                    Text(totalBalance(expenses: expenses).formattedCurrency)
+                        .font(.title)
+                        .foregroundColor(.mainColor)
+                    }
+                    .frame(width: 200, height: 200)
                 PrimaryButtonView(title: "See monthly details") {
                     showDetails = true
                 }
@@ -34,7 +44,7 @@ struct HomeView: View {
                     showAddExpense = true
                 }
                 HStack {
-                    Text("Recent Transaction")
+                    Text("Recent Transactions")
                         .font(.headline)
                         .foregroundColor(.mainColor)
                     Spacer()
@@ -85,6 +95,13 @@ struct HomeView: View {
 }
 
 private extension HomeView {
+
+    private var balanceAngle: Double {
+        let balancePercentage = totalIncome(expenses: expenses) > 0 ? 
+        (totalBalance(expenses: expenses) / totalIncome(expenses: expenses)) :
+        0
+        return maxAngle * balancePercentage
+    }
 
     func totalBalance(expenses: [ExpenseDataModel]) -> Double {
         let totalIncome = totalIncome(expenses: expenses)
