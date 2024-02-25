@@ -13,21 +13,25 @@ struct HomeContainerView: View {
     @FetchRequest(
         sortDescriptors: [SortDescriptor(\ExpenseDataModel.createdAt, order: .reverse)]
     ) var expenses: FetchedResults<ExpenseDataModel>
-    var dataController: DataController
+    let dataController: DataController
 
     var body: some View {
-        TabView {
-            ForEach(1...12, id: \.self) { month in
-                HomeView(
-                    month: month,
-                    expenses: expensesByMonth(month: month),
-                    dataController: dataController
-                )
+        VStack(spacing: 10) {
+            CustomNavigationView(title: "Home")
+            TabView {
+                ForEach(1...12, id: \.self) { month in
+                    HomeView(
+                        month: month,
+                        expenses: expensesByMonth(month: month),
+                        dataController: dataController
+                    )
+                }
             }
+            .tabViewStyle(PageTabViewStyle())
+            .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
         }
-        .tabViewStyle(PageTabViewStyle())
-        .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
         .edgesIgnoringSafeArea(.all)
+        .background(Color.primaryColor)
     }
 }
 

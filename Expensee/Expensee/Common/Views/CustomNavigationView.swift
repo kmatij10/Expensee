@@ -9,19 +9,17 @@ import SwiftUI
 
 struct CustomNavigationView: View {
     let title: String
-    let hasBackButton: Bool
-    let backButtonClick: () -> ()
+    let backButtonClick: (() -> Void)?
 
-    init(title: String, hasBackButton: Bool = true, backButtonClick: @escaping () -> Void) {
+    init(title: String, backButtonClick: (() -> Void)? = nil) {
         self.title = title
-        self.hasBackButton = hasBackButton
         self.backButtonClick = backButtonClick
     }
 
     var body: some View {
         ZStack {
             HStack {
-                if hasBackButton {
+                if let backButtonClick {
                     Button(action: { backButtonClick() }) {
                         Image(systemName: "chevron.left")
                             .frame(width: 24)

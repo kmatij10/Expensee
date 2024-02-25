@@ -8,61 +8,49 @@
 import SwiftUI
 
 struct HomeView: View {
-    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-    var month: Int
-    var expenses: [ExpenseDataModel]
-    var dataController: DataController
+    let month: Int
+    let expenses: [ExpenseDataModel]
+    let dataController: DataController
 
     @State private var showAddExpense = false
 
     var body: some View {
-        VStack(spacing: 10) {
-            CustomNavigationView(
-                title: "Add expense",
-                hasBackButton: false,
-                backButtonClick: {
-                    presentationMode.wrappedValue.dismiss()
+        ScrollView(showsIndicators: false) {
+            VStack(spacing: 16) {
+                HomeHeaderView(
+                    month: getMonthName(from: month),
+                    totalAmount: totalBalance(expenses: expenses).formattedCurrency,
+                    incomeAmount: totalIncome(expenses: expenses).formattedCurrency,
+                    outcomeAmount: totalOutcome(expenses: expenses).formattedCurrency
+                )
+                PrimaryButtonView(title: "Add transaction") {
+                    showAddExpense = true
                 }
-            )
-            ScrollView {
-                VStack(spacing: 16) {
-                    HomeHeaderView(
-                        month: getMonthName(from: month),
-                        totalAmount: totalBalance(expenses: expenses).formattedCurrency,
-                        incomeAmount: totalIncome(expenses: expenses).formattedCurrency,
-                        outcomeAmount: totalOutcome(expenses: expenses).formattedCurrency
-                    )
-                    PrimaryButtonView(title: "Add transaction") {
-                        showAddExpense = true
-                    }
-                    HStack {
-                        Text("Recent Transaction")
-                            .font(.headline)
-                            .foregroundColor(.mainColor)
-                        Spacer()
-                    }
-                    .padding(8)
-                    LazyVStack(spacing: 8) {
-                        ForEach(expenses) { expense in
-                            ExpenseView(expense: expense)
-                        }
-                    }
+                HStack {
+                    Text("Recent Transaction")
+                        .font(.headline)
+                        .foregroundColor(.mainColor)
                     Spacer()
                 }
-                .navigationDestination(
-                    isPresented: $showAddExpense,
-                    destination: {
-                        let model = AddExpenseViewModel(expenseModel: nil, dataController: dataController)
-                        AddExpense(viewModel: model)
+                .padding(8)
+                LazyVStack(spacing: 8) {
+                    ForEach(expenses) { expense in
+                        ExpenseView(expense: expense)
                     }
-                )
-                .frame(maxWidth: .infinity)
-                .cornerRadius(4)
+                }
+                Spacer()
             }
+            .navigationDestination(
+                isPresented: $showAddExpense,
+                destination: {
+                    let model = AddExpenseViewModel(expenseModel: nil, dataController: dataController)
+                    AddExpense(viewModel: model)
+                }
+            )
+            .frame(maxWidth: .infinity)
+            .cornerRadius(4)
         }
         .padding(.horizontal, 24)
-        .edgesIgnoringSafeArea(.all)
-        .background(Color.primaryColor)
     }
 }
 
