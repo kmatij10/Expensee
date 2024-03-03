@@ -15,7 +15,7 @@ struct HomeHeaderView: View {
 
     var body: some View {
         VStack(spacing: 8) {
-            Text("Total balance for \(month)")
+            Text(Constants.totalBalanceForMonth(month))
                 .font(.headline)
                 .foregroundColor(.mainColor)
             Text(totalAmount)
@@ -27,7 +27,7 @@ struct HomeHeaderView: View {
         .cornerRadius(4)
         HStack(spacing: 8) {
             VStack(spacing: 8) {
-                Text("Income")
+                Text(Constants.income)
                     .font(.headline)
                     .foregroundColor(.mainColor)
                 Text(incomeAmount)
@@ -38,7 +38,7 @@ struct HomeHeaderView: View {
             .background(Color.secondaryColor)
             .cornerRadius(4)
             VStack(spacing: 8) {
-                Text("Outcome")
+                Text(Constants.outcome)
                     .font(.headline)
                     .foregroundColor(.mainColor)
                 Text(outcomeAmount)

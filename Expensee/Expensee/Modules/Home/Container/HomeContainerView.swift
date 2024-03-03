@@ -13,7 +13,7 @@ struct HomeContainerView: View {
 
     var body: some View {
         VStack(spacing: 10) {
-            CustomNavigationView(title: "Home")
+            CustomNavigationView(title: Constants.home)
             TabView {
                 ForEach(1...12, id: \.self) { month in
                     let model = HomeViewModel(

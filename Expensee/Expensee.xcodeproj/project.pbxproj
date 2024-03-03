@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		716597B12B949AAB002B85F2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716597B02B949AAB002B85F2 /* Constants.swift */; };
 		71B195612B8A1867001890C9 /* ExpenseeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B195602B8A1867001890C9 /* ExpenseeApp.swift */; };
 		71B195632B8A1867001890C9 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B195622B8A1867001890C9 /* RootView.swift */; };
 		71B195652B8A1869001890C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71B195642B8A1869001890C9 /* Assets.xcassets */; };
@@ -39,6 +40,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		716597B02B949AAB002B85F2 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		71B1955D2B8A1867001890C9 /* Expensee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Expensee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71B195602B8A1867001890C9 /* ExpenseeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseeApp.swift; sourceTree = "<group>"; };
 		71B195622B8A1867001890C9 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				71B195642B8A1869001890C9 /* Assets.xcassets */,
+				716597B02B949AAB002B85F2 /* Constants.swift */,
 			);
 			path = Supporting;
 			sourceTree = "<group>";
@@ -335,6 +338,7 @@
 				71B195772B8A26DF001890C9 /* DataController.swift in Sources */,
 				71B195932B8A67F7001890C9 /* PrimaryButtonView.swift in Sources */,
 				71B195A02B8B438E001890C9 /* DateExtension.swift in Sources */,
+				716597B12B949AAB002B85F2 /* Constants.swift in Sources */,
 				71B195AF2B8B53D0001890C9 /* MonthDetailsViewModel.swift in Sources */,
 				71B195AD2B8B53BF001890C9 /* MonthDetailsView.swift in Sources */,
 				71B195AA2B8B5211001890C9 /* ExpensesChartView.swift in Sources */,

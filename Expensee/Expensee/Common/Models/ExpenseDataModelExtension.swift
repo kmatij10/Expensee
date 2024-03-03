@@ -15,9 +15,9 @@ enum ExpenseType: String, Codable, CaseIterable {
     var text: String {
         switch self {
         case .income:
-            return "Income"
+            return Constants.income
         case .outcome:
-            return "Outcome"
+            return Constants.outcome
         }
     }
 }
@@ -32,15 +32,15 @@ enum ExpenseCategory: String, Codable, CaseIterable {
     var text: String {
         switch self {
         case .food:
-            return "Food"
+            return Constants.food
         case .drinks:
-            return "Drinks"
+            return Constants.drinks
         case .car:
-            return "Car"
+            return Constants.car
         case .bills:
-            return "Bills"
+            return Constants.bills
         case .other:
-            return "Other"
+            return Constants.other
         }
     }
 }

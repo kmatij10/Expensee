@@ -12,8 +12,8 @@ extension Double {
     var formattedCurrency: String {
         let formatter = NumberFormatter()
         formatter.numberStyle = .currency
-        formatter.currencyCode = "EUR"
-        formatter.currencySymbol = "€"
-        return formatter.string(from: NSNumber(value: self)) ?? "€0.00"
+        formatter.currencyCode = Constants.currencyCode
+        formatter.currencySymbol = Constants.currencySymbol
+        return formatter.string(from: NSNumber(value: self)) ?? Constants.currencyDefault
     }
 }

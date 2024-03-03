@@ -9,12 +9,12 @@ import Foundation
 import CoreData
 
 class DataController: ObservableObject {
-    let container = NSPersistentContainer(name: "ExpenseModel")
+    let container = NSPersistentContainer(name: Constants.expenseModel)
 
     init() {
         container.loadPersistentStores { description, error in
             if let error {
-                print("Failed to load data, \(error.localizedDescription)")
+                print(Constants.failedToLoadData(error))
             }
         }
     }
@@ -24,7 +24,7 @@ class DataController: ObservableObject {
             try container.viewContext.save()
             return true
         } catch {
-            print("Something went wrong: \(error.localizedDescription)")
+            print(Constants.somethingWentWrong(error))
             return false
         }
     }
@@ -36,7 +36,7 @@ class DataController: ObservableObject {
         do {
             return try container.viewContext.fetch(request)
         } catch {
-            print("Error fetching data: \(error)")
+            print(Constants.errorFetchingData(error))
             return []
         }
     }

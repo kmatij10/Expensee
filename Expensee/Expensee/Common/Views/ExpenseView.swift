@@ -46,10 +46,10 @@ struct ExpenseView: View {
         }
         .contextMenu {
             Button(action: action) {
-                Label("Edit", systemImage: "pencil")
+                Label(Constants.edit, systemImage: "pencil")
             }
             Button(action: deleteAction) {
-                Label("Delete", systemImage: "trash")
+                Label(Constants.delete, systemImage: "trash")
             }
         }
     }

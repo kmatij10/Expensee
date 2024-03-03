@@ -33,15 +33,15 @@ struct HomeView: View {
                         .foregroundColor(.mainColor)
                     }
                     .frame(width: 200, height: 200)
-                PrimaryButtonView(title: "See monthly details") {
+                PrimaryButtonView(title: Constants.monthlyDetailsAction) {
                     showDetails = true
                 }
                 HStack {
-                    Text("Recent Transactions")
+                    Text(Constants.recentTransactions)
                         .font(.headline)
                         .foregroundColor(.mainColor)
                     Spacer(minLength: 30)
-                    PrimaryButtonView(title: "Add transaction") {
+                    PrimaryButtonView(title: Constants.addTransactionAction) {
                         showAddExpense = true
                     }
                 }

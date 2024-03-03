@@ -15,10 +15,10 @@ struct ExpensesChartView: View {
         Chart {
             ForEach(expensesByCategory, id: \.category) { expenseViewModel in
                 BarMark(
-                    x: .value("Category", expenseViewModel.category?.rawValue ?? "Other"),
-                    y: .value("Total Amount", expenseViewModel.amount)
+                    x: .value(Constants.category, expenseViewModel.category?.rawValue ?? Constants.other),
+                    y: .value(Constants.totalAmount, expenseViewModel.amount)
                 )
-                .foregroundStyle(by: .value("Category", expenseViewModel.category?.rawValue ?? "Other"))
+                .foregroundStyle(by: .value(Constants.category, expenseViewModel.category?.rawValue ?? Constants.other))
             }
         }
         .chartXAxis {

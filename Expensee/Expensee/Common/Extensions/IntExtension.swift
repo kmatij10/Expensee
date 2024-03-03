@@ -11,19 +11,19 @@ extension Int {
 
     var monthName: String {
         let months = [
-            1: "January",
-            2: "February",
-            3: "March",
-            4: "April",
-            5: "May",
-            6: "June",
-            7: "July",
-            8: "August",
-            9: "September",
-            10: "October",
-            11: "November",
-            12: "December"
+            1: Constants.januaryString,
+            2: Constants.februaryString,
+            3: Constants.marchString,
+            4: Constants.aprilString,
+            5: Constants.mayString,
+            6: Constants.juneString,
+            7: Constants.julyString,
+            8: Constants.augustString,
+            9: Constants.septemberString,
+            10: Constants.octoberString,
+            11: Constants.novemberString,
+            12: Constants.decemberString
         ]
-        return months[self] ?? "Unknown"
+        return months[self] ?? Constants.unknownString
     }
 }

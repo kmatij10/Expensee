@@ -39,11 +39,11 @@ struct AddExpenseView: View {
                     viewModel.category = selectedCategory
                 }
             }
-            CustomTextFieldView(text: $viewModel.amount, placeholderText: "Amount")
-            CustomTextFieldView(text: $viewModel.subtitle, placeholderText: "Description")
+            CustomTextFieldView(text: $viewModel.amount, placeholderText: Constants.amount)
+            CustomTextFieldView(text: $viewModel.subtitle, placeholderText: Constants.description)
             HStack {
                 DatePicker(
-                    "Date Picker",
+                    Constants.date,
                     selection: $viewModel.createdAt,
                     displayedComponents: [.date]
                 )

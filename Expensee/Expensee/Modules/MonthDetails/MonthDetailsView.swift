@@ -15,7 +15,7 @@ struct MonthDetailsView: View {
     var body: some View {
         VStack(spacing: 10) {
             CustomNavigationView(
-                title: "Monthly details",
+                title: Constants.monthlyDetails,
                 backButtonClick: {
                     presentationMode.wrappedValue.dismiss()
                 }
