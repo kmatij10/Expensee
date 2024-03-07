@@ -27,6 +27,7 @@ struct HomeContainerView: View {
             .tabViewStyle(PageTabViewStyle())
             .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
         }
+        .padding(.bottom, 5)
         .edgesIgnoringSafeArea(.all)
         .background(Color.primaryColor)
     }
