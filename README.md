@@ -13,20 +13,27 @@ A streamlined expense management app showcasing SwiftUI, CoreData, Charts, and M
     Expensee # Target
     |
     ├── Supporting              # Supporting Files
+    │   ├── Animations          # Lottie json animation files
+    │   │   └── empty           # Lottie empty animation
     │   ├── Assets              # Image Assets and Colors
-    │   └── Extensions          # Helper Extensions
-    │       ├── ColorExtension  # Color utilities
-    │       ├── DoubleExtension # Double type utilities
-    │       ├── DateExtension   # Date type utilities
-    │       ├── DictionaryExtension # Dictionary utilities
-    │       └── IntExtension    # Integer type utilities
+    │   └── Constants           # Constants hardcoded
     |
     ├── Application             # Application Core
     │   └── ExpenseeApp         # Main App Entry Point
     |
     ├── Common                  # Shared Components
+    │   ├── Modifiers           # Custom SwiftUI modifiers
+    │   │   ├── ConfirmationAlertModifier # Custom Alert for Confirmation
+    │   │   └── ErrorAlertModifier   # Custom Alert for handling Errors
     │   ├── Shape               # Custom Shapes
     │   │   └── ArcShape        # Custom Arc Shape
+    │   ├── Extensions          # Helper Extensions
+    │   │   ├── ColorExtension  # Color utilities
+    │   │   ├── DoubleExtension # Double type utilities
+    │   │   ├── DateExtension   # Date type utilities
+    │   │   ├── DictionaryExtension # Dictionary utilities
+    │   │   ├── UserDefaults    # User Defaults utilities
+    │   │   └── IntExtension    # Integer type utilities
     │   └── Views               # Reusable Views
     │       ├── CustomNavigationView # Custom Navigation View
     │       ├── PrimaryButtonView    # Primary Button Component
@@ -34,14 +41,18 @@ A streamlined expense management app showcasing SwiftUI, CoreData, Charts, and M
     │       ├── CustomDropdownView   # Custom Dropdown Picker
     │       ├── ExpenseView          # Expense Display View
     │       ├── ExpensesChartView    # Chart for Visualizing Expenses
-    │       └── ExpenseCategoryView  # View for Expense Categories
+    │       ├── ExpenseCategoryView  # View for Expense Categories
+    │       └── EmptyStateViewView   # View for Empty State with Lottie Animation
     |
     ├── Models                  # Data Models
-    │   └── ExpenseModel        # Model for Expense Data
-    │   └── DataController      # CoreData Controller
+    │   ├── ExpenseModel        # Model for Expense Data
+    │   ├── DataController      # CoreData Controller
     │   └── ExpenseDataModelExtension # Extensions for the Data Model
     |
     ├── Modules                 # Feature Modules
+    │   ├── CategoryThreshold        # Monthly Details Feature
+    │   │   ├── CategoryThresholdView        # Category Threshold Update View
+    │   │   └── CategoryThresholdViewModel   # View Model for Category Threshold Update View
     │   ├── MonthDetails        # Monthly Details Feature
     │   │   ├── MonthDetailsView        # Month Details View
     │   │   └── MonthDetailsViewModel   # View Model for Month Details
