@@ -12,6 +12,9 @@
 		712904EA2B99DF14000C69F8 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712904E92B99DF14000C69F8 /* UserDefaults.swift */; };
 		712904ED2B99DFF2000C69F8 /* CategoryThresholdViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712904EC2B99DFF2000C69F8 /* CategoryThresholdViewModel.swift */; };
 		712904EF2B99E00F000C69F8 /* CategoryThresholdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712904EE2B99E00F000C69F8 /* CategoryThresholdView.swift */; };
+		7140BCA22B9A0A2D00611116 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 7140BCA12B9A0A2D00611116 /* Lottie */; };
+		7140BCA72B9A0A8800611116 /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7140BCA62B9A0A8800611116 /* EmptyStateView.swift */; };
+		7140BCAD2B9A0DE400611116 /* empty.json in Resources */ = {isa = PBXBuildFile; fileRef = 7140BCAC2B9A0DE300611116 /* empty.json */; };
 		716597B12B949AAB002B85F2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716597B02B949AAB002B85F2 /* Constants.swift */; };
 		71B195612B8A1867001890C9 /* ExpenseeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B195602B8A1867001890C9 /* ExpenseeApp.swift */; };
 		71B195632B8A1867001890C9 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B195622B8A1867001890C9 /* RootView.swift */; };
@@ -50,6 +53,8 @@
 		712904E92B99DF14000C69F8 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		712904EC2B99DFF2000C69F8 /* CategoryThresholdViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryThresholdViewModel.swift; sourceTree = "<group>"; };
 		712904EE2B99E00F000C69F8 /* CategoryThresholdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryThresholdView.swift; sourceTree = "<group>"; };
+		7140BCA62B9A0A8800611116 /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
+		7140BCAC2B9A0DE300611116 /* empty.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = empty.json; sourceTree = "<group>"; };
 		716597B02B949AAB002B85F2 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		71B1955D2B8A1867001890C9 /* Expensee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Expensee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71B195602B8A1867001890C9 /* ExpenseeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseeApp.swift; sourceTree = "<group>"; };
@@ -88,6 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7140BCA22B9A0A2D00611116 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,6 +116,14 @@
 				712904EE2B99E00F000C69F8 /* CategoryThresholdView.swift */,
 			);
 			path = CategoryThreshold;
+			sourceTree = "<group>";
+		};
+		7140BCA32B9A0A5B00611116 /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				7140BCAC2B9A0DE300611116 /* empty.json */,
+			);
+			path = Animations;
 			sourceTree = "<group>";
 		};
 		71B195542B8A1867001890C9 = {
@@ -151,6 +165,7 @@
 		71B1956E2B8A2409001890C9 /* Supporting */ = {
 			isa = PBXGroup;
 			children = (
+				7140BCA32B9A0A5B00611116 /* Animations */,
 				71B195642B8A1869001890C9 /* Assets.xcassets */,
 				716597B02B949AAB002B85F2 /* Constants.swift */,
 			);
@@ -218,6 +233,7 @@
 				71B195A22B8B446A001890C9 /* ExpenseView.swift */,
 				71B195A92B8B5211001890C9 /* ExpensesChartView.swift */,
 				71B195B02B8B5EAA001890C9 /* ExpenseCategoryView.swift */,
+				7140BCA62B9A0A8800611116 /* EmptyStateView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -304,6 +320,9 @@
 			dependencies = (
 			);
 			name = Expensee;
+			packageProductDependencies = (
+				7140BCA12B9A0A2D00611116 /* Lottie */,
+			);
 			productName = Expensee;
 			productReference = 71B1955D2B8A1867001890C9 /* Expensee.app */;
 			productType = "com.apple.product-type.application";
@@ -332,6 +351,9 @@
 				Base,
 			);
 			mainGroup = 71B195542B8A1867001890C9;
+			packageReferences = (
+				7140BCA02B9A0A2D00611116 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+			);
 			productRefGroup = 71B1955E2B8A1867001890C9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -348,6 +370,7 @@
 			files = (
 				71B195682B8A1869001890C9 /* Preview Assets.xcassets in Resources */,
 				71B195652B8A1869001890C9 /* Assets.xcassets in Resources */,
+				7140BCAD2B9A0DE400611116 /* empty.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -382,6 +405,7 @@
 				71B1958E2B8A620B001890C9 /* ExpenseDataModelExtension.swift in Sources */,
 				71B195BB2B8B78D6001890C9 /* HomeContainerViewModel.swift in Sources */,
 				712904EA2B99DF14000C69F8 /* UserDefaults.swift in Sources */,
+				7140BCA72B9A0A8800611116 /* EmptyStateView.swift in Sources */,
 				71B195612B8A1867001890C9 /* ExpenseeApp.swift in Sources */,
 				71B195A82B8B51E0001890C9 /* DictionaryExtension.swift in Sources */,
 				71B1957C2B8A34BA001890C9 /* AddExpenseViewModel.swift in Sources */,
@@ -604,6 +628,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7140BCA02B9A0A2D00611116 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.4.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7140BCA12B9A0A2D00611116 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7140BCA02B9A0A2D00611116 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		71B195732B8A24E6001890C9 /* ExpenseModel.xcdatamodeld */ = {

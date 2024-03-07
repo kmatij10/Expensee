@@ -20,19 +20,26 @@ struct MonthDetailsView: View {
                     presentationMode.wrappedValue.dismiss()
                 }
             )
-            ScrollView {
-                VStack(spacing: 15) {
-                    ExpensesChartView(expensesByCategory: viewModel.expensesByCategory)
-                    PrimaryButtonView(title: Constants.setThreshold) {
-                        showCategoryThreshold = true
-                    }
-                    LazyVStack(spacing: 10) {
-                        ForEach(viewModel.expensesByCategory, id: \.category) { expenseByCategory in
-                            ExpenseCategoryView(viewModel: expenseByCategory)
+            Group {
+                if viewModel.expensesByCategory.isEmpty {
+                    EmptyStateView()
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                } else {
+                    ScrollView {
+                        VStack(spacing: 15) {
+                            ExpensesChartView(expensesByCategory: viewModel.expensesByCategory)
+                            PrimaryButtonView(title: Constants.setThreshold) {
+                                showCategoryThreshold = true
+                            }
+                            LazyVStack(spacing: 10) {
+                                ForEach(viewModel.expensesByCategory, id: \.category) { expenseByCategory in
+                                    ExpenseCategoryView(viewModel: expenseByCategory)
+                                }
+                            }
                         }
+                        .padding(.top, 15)
                     }
                 }
-                .padding(.top, 15)
             }
         }
         .padding(.horizontal, 24)

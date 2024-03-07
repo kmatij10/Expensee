@@ -47,22 +47,28 @@ struct HomeView: View {
                     }
                 }
                 .padding(.vertical, 16)
-                LazyVStack(spacing: 8) {
-                    ForEach(viewModel.expenses) { expense in
-                        ExpenseView(
-                            expense: expense,
-                            action: {
-                                expenseDetailsModel = expense
-                                showAddExpense = true
-                            },
-                            deleteAction: {
-                                expenseDetailsModel = expense
-                                showingDeleteConfirmation = true
+                Group {
+                    if viewModel.expenses.isEmpty {
+                        EmptyStateView()
+                    } else {
+                        LazyVStack(spacing: 8) {
+                            ForEach(viewModel.expenses) { expense in
+                                ExpenseView(
+                                    expense: expense,
+                                    action: {
+                                        expenseDetailsModel = expense
+                                        showAddExpense = true
+                                    },
+                                    deleteAction: {
+                                        expenseDetailsModel = expense
+                                        showingDeleteConfirmation = true
+                                    }
+                                )
                             }
-                        )
+                        }
+                        Spacer()
                     }
                 }
-                Spacer()
             }
             .frame(maxWidth: .infinity)
             .cornerRadius(4)

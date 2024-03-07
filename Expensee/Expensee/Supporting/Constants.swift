@@ -71,7 +71,7 @@ enum Constants {
 
     static let monthlyDetails = "Monthly details"
     static let home = "Home"
-    static let monthlyDetailsAction = "See monthly details"
+    static let monthlyDetailsAction = "See monthly outcome details"
     static let recentTransactions = "Recent Transactions"
     static let addTransactionAction = "Add transaction"
     static let updateTransactionAction = "Update transaction"
