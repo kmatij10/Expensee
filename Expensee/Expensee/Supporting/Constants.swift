@@ -41,6 +41,7 @@ enum Constants {
     static let totalAmount = "Total Amount"
     static let categoryThreshold = "Category Threshold"
 
+    static let paycheck = "Paycheck"
     static let food = "Food"
     static let drinks = "Drinks"
     static let car = "Car"

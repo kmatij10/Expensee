@@ -23,6 +23,7 @@ enum ExpenseType: String, Codable, CaseIterable {
 }
 
 enum ExpenseCategory: String, Codable, CaseIterable {
+    case paycheck
     case food
     case snacks
     case cosmetics
@@ -50,6 +51,8 @@ enum ExpenseCategory: String, Codable, CaseIterable {
 
     var text: String {
         switch self {
+        case .paycheck:
+            return Constants.paycheck
         case .food:
             return Constants.food
         case .drinks:
