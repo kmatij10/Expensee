@@ -8,8 +8,8 @@
 import Foundation
 
 final class HomeViewModel: ObservableObject {
+    var containerViewModel: HomeContainerViewModel
     let month: Int
-    let containerViewModel: HomeContainerViewModel
     let dataController: DataController
 
     var expenses: [ExpenseDataModel] {
@@ -38,14 +38,22 @@ final class HomeViewModel: ObservableObject {
     }
 
     var totalBalance: Double {
-        return totalIncome - totalOutcome
+        totalIncome - totalOutcome
     }
 
     var totalIncome: Double {
-        return expenses.reduce(0) { $0 + ($1.expenseType == .income ? $1.amount : 0) }
+        expenses.reduce(0) { $0 + ($1.expenseType == .income ? $1.amount : 0) }
     }
 
     var totalOutcome: Double {
-        return expenses.reduce(0) { $0 + ($1.expenseType == .outcome ? $1.amount : 0) }
+        expenses.reduce(0) { $0 + ($1.expenseType == .outcome ? $1.amount : 0) }
+    }
+
+    var alertTitle: String {
+        Constants.oops
+    }
+
+    var alertMessage: String {
+        containerViewModel.error?.localizedDescription ?? Constants.unexpectedError
     }
 }

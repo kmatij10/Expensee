@@ -7,25 +7,27 @@
 
 import Foundation
 import SwiftUI
+import Combine
 
 final class HomeContainerViewModel: ObservableObject {
 
     @Published var expenses: [ExpenseDataModel] = []
+    @Published var error: Error?
+    @Published var showErrorAlert = false
     var dataController: DataController
 
     init(dataController: DataController) {
         self.dataController = dataController
-    }
 
-    func fetchExpenses() {
-        expenses = dataController.fetchExpenses()
+        dataController.$expenses
+            .assign(to: &$expenses)
+        dataController.$error
+            .assign(to: &$error)
+        dataController.$showErrorAlert
+            .assign(to: &$showErrorAlert)
     }
 
     func deleteExpense(expense: ExpenseDataModel) {
-        let success = dataController.deleteExpense(with: expense)
-
-        if success {
-            fetchExpenses()
-        }
+        _ = dataController.deleteExpense(with: expense)
     }
 }

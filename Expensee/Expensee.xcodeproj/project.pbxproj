@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		712904E52B99CA32000C69F8 /* ErrorAlertModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712904E42B99CA32000C69F8 /* ErrorAlertModifier.swift */; };
 		716597B12B949AAB002B85F2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716597B02B949AAB002B85F2 /* Constants.swift */; };
 		71B195612B8A1867001890C9 /* ExpenseeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B195602B8A1867001890C9 /* ExpenseeApp.swift */; };
 		71B195632B8A1867001890C9 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B195622B8A1867001890C9 /* RootView.swift */; };
@@ -40,6 +41,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		712904E42B99CA32000C69F8 /* ErrorAlertModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorAlertModifier.swift; sourceTree = "<group>"; };
 		716597B02B949AAB002B85F2 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		71B1955D2B8A1867001890C9 /* Expensee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Expensee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71B195602B8A1867001890C9 /* ExpenseeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseeApp.swift; sourceTree = "<group>"; };
@@ -84,6 +86,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		712904E62B99D4DD000C69F8 /* Modifiers */ = {
+			isa = PBXGroup;
+			children = (
+				712904E42B99CA32000C69F8 /* ErrorAlertModifier.swift */,
+			);
+			path = Modifiers;
+			sourceTree = "<group>";
+		};
 		71B195542B8A1867001890C9 = {
 			isa = PBXGroup;
 			children = (
@@ -140,6 +150,7 @@
 		71B195702B8A242C001890C9 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				712904E62B99D4DD000C69F8 /* Modifiers */,
 				71B195B42B8B644A001890C9 /* Shape */,
 				71B1958F2B8A6389001890C9 /* Extensions */,
 				71B1957D2B8A35EA001890C9 /* Views */,
@@ -340,6 +351,7 @@
 				71B195A02B8B438E001890C9 /* DateExtension.swift in Sources */,
 				716597B12B949AAB002B85F2 /* Constants.swift in Sources */,
 				71B195AF2B8B53D0001890C9 /* MonthDetailsViewModel.swift in Sources */,
+				712904E52B99CA32000C69F8 /* ErrorAlertModifier.swift in Sources */,
 				71B195AD2B8B53BF001890C9 /* MonthDetailsView.swift in Sources */,
 				71B195AA2B8B5211001890C9 /* ExpensesChartView.swift in Sources */,
 				71B195A32B8B446A001890C9 /* ExpenseView.swift in Sources */,

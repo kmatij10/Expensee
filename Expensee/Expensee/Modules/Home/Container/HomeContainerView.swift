@@ -29,8 +29,5 @@ struct HomeContainerView: View {
         }
         .edgesIgnoringSafeArea(.all)
         .background(Color.primaryColor)
-        .onAppear {
-            viewModel.fetchExpenses()
-        }
     }
 }

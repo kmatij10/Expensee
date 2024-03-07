@@ -7,6 +7,7 @@
 
 import Foundation
 import CoreData
+import Combine
 
 final class AddExpenseViewModel: ObservableObject {
     @Published var type: ExpenseType = .income
@@ -15,6 +16,8 @@ final class AddExpenseViewModel: ObservableObject {
     @Published var category: ExpenseCategory = .other
     @Published var createdAt = Date()
     @Published var saveSuccessful = false
+    @Published var error: Error?
+    @Published var showErrorAlert = false
 
     private let dataController: DataController
     private let expenseModel: ExpenseDataModel?
@@ -38,6 +41,11 @@ final class AddExpenseViewModel: ObservableObject {
             category = expense.expenseCategory ?? .other
             createdAt = expense.createdAt ?? Date()
         }
+        
+        dataController.$error
+            .assign(to: &$error)
+        dataController.$showErrorAlert
+            .assign(to: &$showErrorAlert)
     }
 
     var titleText: String {
@@ -51,7 +59,15 @@ final class AddExpenseViewModel: ObservableObject {
     var categoryDisplayText: String {
         category.text
     }
-    
+
+    var alertTitle: String {
+        Constants.oops
+    }
+
+    var alertMessage: String {
+        error?.localizedDescription ?? Constants.unexpectedError
+    }
+
     func saveExpense() {
         let amountStr = amount.trimmingCharacters(in: .whitespacesAndNewlines)
         guard let amount = Double(amountStr)

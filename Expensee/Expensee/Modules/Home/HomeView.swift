@@ -63,31 +63,36 @@ struct HomeView: View {
                 }
                 Spacer()
             }
-            .navigationDestination(
-                isPresented: $showAddExpense,
-                destination: {
-                    let model = AddExpenseViewModel(
-                        expenseModel: expenseDetailsModel,
-                        dataController: viewModel.dataController
-                    )
-                    AddExpenseView(viewModel: model)
-                }
-            )
-            .navigationDestination(
-                isPresented: $showDetails,
-                destination: {
-                    let model = MonthDetailsViewModel(
-                        dataController: viewModel.dataController,
-                        expenses: viewModel.expenses,
-                        month: viewModel.month
-                    )
-                    MonthDetailsView(viewModel: model)
-                }
-            )
             .frame(maxWidth: .infinity)
             .cornerRadius(4)
         }
         .padding(.horizontal, 24)
+        .navigationDestination(
+            isPresented: $showAddExpense,
+            destination: {
+                let model = AddExpenseViewModel(
+                    expenseModel: expenseDetailsModel,
+                    dataController: viewModel.dataController
+                )
+                AddExpenseView(viewModel: model)
+            }
+        )
+        .navigationDestination(
+            isPresented: $showDetails,
+            destination: {
+                let model = MonthDetailsViewModel(
+                    dataController: viewModel.dataController,
+                    expenses: viewModel.expenses,
+                    month: viewModel.month
+                )
+                MonthDetailsView(viewModel: model)
+            }
+        )
+        .errorAlert(
+            isPresented: $viewModel.containerViewModel.showErrorAlert,
+            title: viewModel.alertTitle,
+            message: viewModel.alertMessage
+        )
         .onAppear {
             expenseDetailsModel = nil
         }

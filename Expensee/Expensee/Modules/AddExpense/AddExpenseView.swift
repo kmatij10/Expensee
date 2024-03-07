@@ -65,6 +65,11 @@ struct AddExpenseView: View {
         .edgesIgnoringSafeArea(.all)
         .background(Color.primaryColor)
         .navigationBarHidden(true)
+        .errorAlert(
+            isPresented: $viewModel.showErrorAlert,
+            title: viewModel.alertTitle,
+            message: viewModel.alertMessage
+        )
         .onReceive(viewModel.$saveSuccessful) { close in
             if close { presentationMode.wrappedValue.dismiss() }
         }
