@@ -27,14 +27,33 @@ struct ExpenseCategoryView: View {
                         .foregroundColor(viewModel.largeAmount ? .redPrimaryColor : .greenPrimaryColor)
                     Spacer()
                 }
+                GeometryReader { geometry in
+                    ZStack(alignment: .leading) {
+                        Rectangle()
+                            .frame(height: 4)
+                            .foregroundColor(.gray.opacity(0.3))
+                            .cornerRadius(1)
+                        Rectangle()
+                            .frame(width: currentAmountLineWidth(for: geometry.size.width), height: 6)
+                            .foregroundColor(.primaryButtonColor)
+                            .cornerRadius(2)
+                    }
+                }
+                .frame(height: 20)
             }.padding(.leading, 4)
             Spacer()
         }
         .frame(maxWidth: .infinity)
-        .padding(.vertical, 30)
+        .padding(.top, 30)
+        .padding(.bottom, 10)
         .padding(.horizontal, 14)
         .background(Color.secondaryColor)
         .cornerRadius(4)
+    }
+
+    private func currentAmountLineWidth(for totalWidth: CGFloat) -> CGFloat {
+        let ratio = min(viewModel.amount / viewModel.threshold, 1)
+        return totalWidth * CGFloat(ratio)
     }
 }
 
@@ -42,4 +61,5 @@ struct ExpenseCategoryViewModel {
     let category: ExpenseCategory?
     let amount: Double
     let largeAmount: Bool
+    let threshold: Double
 }
