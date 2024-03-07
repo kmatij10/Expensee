@@ -12,16 +12,16 @@ struct ExpenseCategoryView: View {
     let viewModel: ExpenseCategoryViewModel
 
     var body: some View {
-        HStack {
+        HStack (spacing: 0){
             VStack(alignment: .leading, spacing: 15) {
-                HStack {
+                HStack(spacing: 0) {
                     Text(viewModel.category?.text ?? "")
                         .font(.headline)
                         .foregroundColor(.mainColor)
                     Spacer()
                     Text(viewModel.amount.formattedCurrency)
                 }
-                HStack {
+                HStack(spacing: 0) {
                     Circle()
                         .frame(width: 24, height: 24)
                         .foregroundColor(viewModel.largeAmount ? .redPrimaryColor : .greenPrimaryColor)

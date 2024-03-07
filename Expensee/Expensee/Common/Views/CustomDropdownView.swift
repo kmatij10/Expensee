@@ -61,11 +61,11 @@ struct DropdownButtonView: View {
     let action: (String) -> Void
 
     var body: some View {
-        VStack {
+        VStack(spacing: 0) {
             Button(action: {
                 shouldShowDropdown.toggle()
             }) {
-                HStack {
+                HStack(spacing: 0) {
                     Text(displayText)
                         .foregroundColor(.mainColor)
                     Spacer()
@@ -80,7 +80,7 @@ struct DropdownButtonView: View {
                 RoundedRectangle(cornerRadius: 4)
                     .fill(Color.secondaryColor)
             )
-            VStack {
+            VStack(spacing: 0) {
                 if shouldShowDropdown {
                     DropdownOptionsListView(
                         shouldShowDropdown: $shouldShowDropdown,

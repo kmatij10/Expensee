@@ -14,9 +14,9 @@ struct ExpenseView: View {
     let deleteAction: () -> Void
 
     var body: some View {
-        HStack {
+        HStack(spacing: 0) {
             VStack(alignment: .leading, spacing: 6) {
-                HStack {
+                HStack(spacing: 0) {
                     Text(expense.expenseCategory?.text ?? "")
                         .font(.headline)
                         .foregroundColor(.mainColor)
@@ -27,7 +27,7 @@ struct ExpenseView: View {
                             .redPrimaryColor
                         )
                 }
-                HStack {
+                HStack(spacing: 0) {
                     Text(expense.subtitle ?? "")
                         .foregroundColor(.mainColor)
                     Spacer()

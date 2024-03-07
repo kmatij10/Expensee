@@ -36,7 +36,7 @@ struct HomeView: View {
                 PrimaryButtonView(title: Constants.monthlyDetailsAction) {
                     showDetails = true
                 }
-                HStack {
+                HStack(spacing: 0) {
                     Text(Constants.recentTransactions)
                         .font(.headline)
                         .foregroundColor(.mainColor)

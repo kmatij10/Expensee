@@ -18,7 +18,7 @@ struct CustomNavigationView: View {
 
     var body: some View {
         ZStack {
-            HStack {
+            HStack(spacing: 0) {
                 if let backButtonClick {
                     Button(action: { backButtonClick() }) {
                         Image(systemName: "chevron.left")
@@ -28,7 +28,7 @@ struct CustomNavigationView: View {
                 }
                 Spacer()
             }
-            HStack {
+            HStack(spacing: 0) {
                 Text(title)
             }
         }
