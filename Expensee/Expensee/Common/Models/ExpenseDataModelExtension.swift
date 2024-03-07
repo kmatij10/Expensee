@@ -24,8 +24,27 @@ enum ExpenseType: String, Codable, CaseIterable {
 
 enum ExpenseCategory: String, Codable, CaseIterable {
     case food
+    case snacks
+    case cosmetics
+    case glutenFree
     case drinks
+    case sport
+    case delivery
+    case streaming
+    case gas
     case car
+    case credit
+    case education
+    case health
+    case cigarettes
+    case household
+    case hobbies
+    case clothing
+    case repairs
+    case installments
+    case greenMarket
+    case supplements
+    case beauty
     case bills
     case other
 
@@ -41,6 +60,44 @@ enum ExpenseCategory: String, Codable, CaseIterable {
             return Constants.bills
         case .other:
             return Constants.other
+        case .snacks:
+            return Constants.snacks
+        case .cosmetics:
+            return Constants.cosmetics
+        case .glutenFree:
+            return Constants.glutenFree
+        case .sport:
+            return Constants.sport
+        case .delivery:
+            return Constants.delivery
+        case .streaming:
+            return Constants.streaming
+        case .gas:
+            return Constants.gas
+        case .credit:
+            return Constants.credit
+        case .education:
+            return Constants.education
+        case .health:
+            return Constants.health
+        case .cigarettes:
+            return Constants.cigarettes
+        case .household:
+            return Constants.household
+        case .hobbies:
+            return Constants.hobbies
+        case .clothing:
+            return Constants.clothing
+        case .repairs:
+            return Constants.repairs
+        case .installments:
+            return Constants.installments
+        case .greenMarket:
+            return Constants.greenMarket
+        case .supplements:
+            return Constants.supplements
+        case .beauty:
+            return Constants.beauty
         }
     }
 }

@@ -19,29 +19,32 @@ struct CategoryThresholdView: View {
                     presentationMode.wrappedValue.dismiss()
                 }
             )
-            VStack(spacing: 20) {
-                ForEach(viewModel.categories, id: \.self) { category in
-                    VStack(alignment: .leading, spacing: 5) {
-                        Text(category.text)
-                            .font(.headline)
-                            .foregroundColor(.mainColor)
-                        CustomTextFieldView(
-                            text: Binding<String>(
-                                get: { viewModel.thresholds[category, default: String(Constants.thresholdDefault)] },
-                                set: { viewModel.thresholds[category] = $0 }
-                            ),
-                            placeholderText: Constants.amount
-                        )
+            ScrollView(showsIndicators: false) {
+                VStack(spacing: 20) {
+                    ForEach(viewModel.categories, id: \.self) { category in
+                        VStack(alignment: .leading, spacing: 5) {
+                            Text(category.text)
+                                .font(.headline)
+                                .foregroundColor(.mainColor)
+                            CustomTextFieldView(
+                                text: Binding<String>(
+                                    get: { viewModel.thresholds[category, default: String(Constants.thresholdDefault)] },
+                                    set: { viewModel.thresholds[category] = $0 }
+                                ),
+                                placeholderText: Constants.amount
+                            )
+                        }
                     }
+                    PrimaryButtonView(title: Constants.save) {
+                        viewModel.saveThresholds()
+                        presentationMode.wrappedValue.dismiss()
+                    }
+                    Spacer()
                 }
             }
-            PrimaryButtonView(title: Constants.save) {
-                viewModel.saveThresholds()
-                presentationMode.wrappedValue.dismiss()
-            }
-            Spacer()
         }
         .padding(.horizontal, 24)
+        .padding(.bottom, 44)
         .edgesIgnoringSafeArea(.all)
         .background(Color.primaryColor)
         .navigationBarHidden(true)
