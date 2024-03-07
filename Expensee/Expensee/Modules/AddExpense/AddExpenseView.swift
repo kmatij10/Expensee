@@ -41,8 +41,16 @@ struct AddExpenseView: View {
                             viewModel.category = selectedCategory
                         }
                     }
-                    CustomTextFieldView(text: $viewModel.amount, placeholderText: Constants.amount)
-                    CustomTextFieldView(text: $viewModel.subtitle, placeholderText: Constants.description)
+                    CustomTextFieldView(
+                        text: $viewModel.amount,
+                        placeholderText: Constants.amount,
+                        keyboardType: .decimalPad
+                    )
+                    CustomTextFieldView(
+                        text: $viewModel.subtitle,
+                        placeholderText: Constants.description,
+                        keyboardType: .alphabet
+                    )
                     HStack(spacing: 0) {
                         DatePicker(
                             Constants.date,
@@ -70,6 +78,7 @@ struct AddExpenseView: View {
         .edgesIgnoringSafeArea(.all)
         .background(Color.primaryColor)
         .navigationBarHidden(true)
+        .scrollDismissesKeyboard(.immediately)
         .errorAlert(
             isPresented: $viewModel.showErrorAlert,
             title: viewModel.alertTitle,

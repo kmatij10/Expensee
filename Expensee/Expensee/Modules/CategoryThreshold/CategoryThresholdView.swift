@@ -31,7 +31,8 @@ struct CategoryThresholdView: View {
                                     get: { viewModel.thresholds[category, default: String(Constants.thresholdDefault)] },
                                     set: { viewModel.thresholds[category] = $0 }
                                 ),
-                                placeholderText: Constants.amount
+                                placeholderText: Constants.amount,
+                                keyboardType: .decimalPad
                             )
                         }
                     }
@@ -48,5 +49,6 @@ struct CategoryThresholdView: View {
         .edgesIgnoringSafeArea(.all)
         .background(Color.primaryColor)
         .navigationBarHidden(true)
+        .scrollDismissesKeyboard(.immediately)
     }
 }

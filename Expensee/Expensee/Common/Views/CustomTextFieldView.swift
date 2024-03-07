@@ -11,6 +11,7 @@ import SwiftUI
 struct CustomTextFieldView: View {
     @Binding var text: String
     let placeholderText: String
+    let keyboardType: UIKeyboardType
 
     var body: some View {
         HStack(spacing: 8) {
@@ -23,5 +24,6 @@ struct CustomTextFieldView: View {
         .accentColor(Color.mainColor)
         .background(Color.secondaryColor)
         .cornerRadius(4)
+        .keyboardType(keyboardType)
     }
 }
