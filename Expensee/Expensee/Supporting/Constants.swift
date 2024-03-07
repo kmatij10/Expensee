@@ -13,7 +13,9 @@ enum Constants {
     static let currencySymbol = "€"
     static let currencyDefault = "€0.00"
     static let dateFormat = "yyyy-MM-dd"
-    
+
+    static let thresholdDefault = 100.0
+
     static let januaryString = "January"
     static let februaryString = "February"
     static let marchString = "March"
@@ -33,10 +35,12 @@ enum Constants {
     static let delete = "Delete"
     static let ok = "OK"
     static let cancel = "Cancel"
+    static let save = "Save"
 
     static let category = "Category"
     static let totalAmount = "Total Amount"
-    
+    static let categoryThreshold = "Category Threshold"
+
     static let food = "Food"
     static let drinks = "Drinks"
     static let car = "Car"
@@ -64,6 +68,7 @@ enum Constants {
 
     static let confirmDelete = "Confirm Delete"
     static let confirmDeleteMessage = "Are you sure you want to delete this item?"
+    static let setThreshold = "Set Category Thresholds"
 
     static func totalBalanceForMonth(_ month: String) -> String {
         "Total balance for \(month)"

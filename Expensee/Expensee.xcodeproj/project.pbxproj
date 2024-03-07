@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		712904E52B99CA32000C69F8 /* ErrorAlertModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712904E42B99CA32000C69F8 /* ErrorAlertModifier.swift */; };
 		712904E82B99DBAA000C69F8 /* ConfirmationAlertModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712904E72B99DBAA000C69F8 /* ConfirmationAlertModifier.swift */; };
+		712904EA2B99DF14000C69F8 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712904E92B99DF14000C69F8 /* UserDefaults.swift */; };
+		712904ED2B99DFF2000C69F8 /* CategoryThresholdViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712904EC2B99DFF2000C69F8 /* CategoryThresholdViewModel.swift */; };
+		712904EF2B99E00F000C69F8 /* CategoryThresholdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712904EE2B99E00F000C69F8 /* CategoryThresholdView.swift */; };
 		716597B12B949AAB002B85F2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716597B02B949AAB002B85F2 /* Constants.swift */; };
 		71B195612B8A1867001890C9 /* ExpenseeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B195602B8A1867001890C9 /* ExpenseeApp.swift */; };
 		71B195632B8A1867001890C9 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B195622B8A1867001890C9 /* RootView.swift */; };
@@ -44,6 +47,9 @@
 /* Begin PBXFileReference section */
 		712904E42B99CA32000C69F8 /* ErrorAlertModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorAlertModifier.swift; sourceTree = "<group>"; };
 		712904E72B99DBAA000C69F8 /* ConfirmationAlertModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationAlertModifier.swift; sourceTree = "<group>"; };
+		712904E92B99DF14000C69F8 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
+		712904EC2B99DFF2000C69F8 /* CategoryThresholdViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryThresholdViewModel.swift; sourceTree = "<group>"; };
+		712904EE2B99E00F000C69F8 /* CategoryThresholdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryThresholdView.swift; sourceTree = "<group>"; };
 		716597B02B949AAB002B85F2 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		71B1955D2B8A1867001890C9 /* Expensee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Expensee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71B195602B8A1867001890C9 /* ExpenseeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseeApp.swift; sourceTree = "<group>"; };
@@ -95,6 +101,15 @@
 				712904E72B99DBAA000C69F8 /* ConfirmationAlertModifier.swift */,
 			);
 			path = Modifiers;
+			sourceTree = "<group>";
+		};
+		712904EB2B99DFDB000C69F8 /* CategoryThreshold */ = {
+			isa = PBXGroup;
+			children = (
+				712904EC2B99DFF2000C69F8 /* CategoryThresholdViewModel.swift */,
+				712904EE2B99E00F000C69F8 /* CategoryThresholdView.swift */,
+			);
+			path = CategoryThreshold;
 			sourceTree = "<group>";
 		};
 		71B195542B8A1867001890C9 = {
@@ -175,6 +190,7 @@
 		71B195722B8A2452001890C9 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				712904EB2B99DFDB000C69F8 /* CategoryThreshold */,
 				71B195AB2B8B53AD001890C9 /* MonthDetails */,
 				71B195982B8A8442001890C9 /* Root */,
 				71B195822B8A4EAD001890C9 /* Home */,
@@ -225,6 +241,7 @@
 				71B1959F2B8B438E001890C9 /* DateExtension.swift */,
 				71B195A72B8B51E0001890C9 /* DictionaryExtension.swift */,
 				71B195B22B8B6388001890C9 /* IntExtension.swift */,
+				712904E92B99DF14000C69F8 /* UserDefaults.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -345,6 +362,7 @@
 				71B195842B8A4EC1001890C9 /* HomeView.swift in Sources */,
 				71B1959C2B8B42CF001890C9 /* HomeContainerView.swift in Sources */,
 				71B1957F2B8A35FB001890C9 /* CustomNavigationView.swift in Sources */,
+				712904ED2B99DFF2000C69F8 /* CategoryThresholdViewModel.swift in Sources */,
 				71B195972B8A78E2001890C9 /* CustomDropdownView.swift in Sources */,
 				71B195B32B8B6388001890C9 /* IntExtension.swift in Sources */,
 				71B1957A2B8A3423001890C9 /* AddExpenseView.swift in Sources */,
@@ -358,10 +376,12 @@
 				71B195AD2B8B53BF001890C9 /* MonthDetailsView.swift in Sources */,
 				71B195AA2B8B5211001890C9 /* ExpensesChartView.swift in Sources */,
 				71B195A32B8B446A001890C9 /* ExpenseView.swift in Sources */,
+				712904EF2B99E00F000C69F8 /* CategoryThresholdView.swift in Sources */,
 				71B195752B8A24E6001890C9 /* ExpenseModel.xcdatamodeld in Sources */,
 				71B195A62B8B44B6001890C9 /* HomeHeaderView.swift in Sources */,
 				71B1958E2B8A620B001890C9 /* ExpenseDataModelExtension.swift in Sources */,
 				71B195BB2B8B78D6001890C9 /* HomeContainerViewModel.swift in Sources */,
+				712904EA2B99DF14000C69F8 /* UserDefaults.swift in Sources */,
 				71B195612B8A1867001890C9 /* ExpenseeApp.swift in Sources */,
 				71B195A82B8B51E0001890C9 /* DictionaryExtension.swift in Sources */,
 				71B1957C2B8A34BA001890C9 /* AddExpenseViewModel.swift in Sources */,
