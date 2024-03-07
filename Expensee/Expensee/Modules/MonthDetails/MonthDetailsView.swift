@@ -25,7 +25,7 @@ struct MonthDetailsView: View {
                     EmptyStateView()
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
                 } else {
-                    ScrollView {
+                    ScrollView(showsIndicators: false) {
                         VStack(spacing: 15) {
                             ExpensesChartView(expensesByCategory: viewModel.expensesByCategory)
                             PrimaryButtonView(title: Constants.setThreshold) {

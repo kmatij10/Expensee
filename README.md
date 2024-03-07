@@ -72,7 +72,7 @@ A streamlined expense management app showcasing SwiftUI, CoreData, Charts, and M
     
 ## UI
 
-![](image01.png) ![](image02.png) ![](image03.png) ![](image04.png) ![](image05.png)
+![](image01.png) ![](image02.png) ![](image03.png) ![](image04.png) ![](image05.png) ![](image06.png)
 
     
 ## Technologies
@@ -80,6 +80,10 @@ A streamlined expense management app showcasing SwiftUI, CoreData, Charts, and M
 - [SwiftUI](https://developer.apple.com/documentation/swiftui/) - SwiftUI is Apple's framework for developing user interfaces across all Apple platforms, utilizing the Swift programming language to optimize for both performance and development efficiency.
 - [CoreData](https://developer.apple.com/documentation/coredata) - CoreData provides a framework for managing the model layer objects in an application, offering data persistence, caching, and the ability to implement undo functionality in a consistent manner.
 - [Charts](https://developer.apple.com/documentation/charts) - The Charts framework in Swift delivers a suite of tools for creating visual representations of data, facilitating the interpretation and analysis of information.
+
+## Dependencies
+
+- [Lottie](https://github.com/airbnb/lottie-spm) - Lottie is a cross-platform library that natively renders vector-based animations.
 
 ## License
 

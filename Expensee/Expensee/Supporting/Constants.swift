@@ -90,6 +90,10 @@ enum Constants {
     static let confirmDeleteMessage = "Are you sure you want to delete this item?"
     static let setThreshold = "Set Category Thresholds"
 
+    static func thresholdForCategory(_ threshold: String) -> String {
+        "Threshold: \(threshold)"
+    }
+
     static func totalBalanceForMonth(_ month: String) -> String {
         "Total balance for \(month)"
     }
