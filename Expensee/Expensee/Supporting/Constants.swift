@@ -32,6 +32,7 @@ enum Constants {
     static let edit = "Edit"
     static let delete = "Delete"
     static let ok = "OK"
+    static let cancel = "Cancel"
 
     static let category = "Category"
     static let totalAmount = "Total Amount"
@@ -60,6 +61,9 @@ enum Constants {
 
     static let oops = "Oops!"
     static let unexpectedError = "An unexpected error occurred."
+
+    static let confirmDelete = "Confirm Delete"
+    static let confirmDeleteMessage = "Are you sure you want to delete this item?"
 
     static func totalBalanceForMonth(_ month: String) -> String {
         "Total balance for \(month)"

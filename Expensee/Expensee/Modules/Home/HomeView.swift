@@ -13,6 +13,7 @@ struct HomeView: View {
     @State private var showAddExpense = false
     @State private var showDetails = false
     @State private var expenseDetailsModel: ExpenseDataModel?
+    @State private var showingDeleteConfirmation = false
 
     var body: some View {
         ScrollView(showsIndicators: false) {
@@ -31,8 +32,8 @@ struct HomeView: View {
                     Text(viewModel.totalBalance.formattedCurrency)
                         .font(.title)
                         .foregroundColor(.mainColor)
-                    }
-                    .frame(width: 200, height: 200)
+                }
+                .frame(width: 200, height: 200)
                 PrimaryButtonView(title: Constants.monthlyDetailsAction) {
                     showDetails = true
                 }
@@ -55,8 +56,8 @@ struct HomeView: View {
                                 showAddExpense = true
                             },
                             deleteAction: {
-                                viewModel.containerViewModel
-                                    .deleteExpense(expense: expense)
+                                expenseDetailsModel = expense
+                                showingDeleteConfirmation = true
                             }
                         )
                     }
@@ -86,6 +87,15 @@ struct HomeView: View {
                     month: viewModel.month
                 )
                 MonthDetailsView(viewModel: model)
+            }
+        )
+        .confirmationAlert(
+            isPresented: $showingDeleteConfirmation,
+            itemToDelete: $expenseDetailsModel,
+            title: Constants.confirmDelete,
+            message: Constants.confirmDeleteMessage,
+            deleteAction: { item in
+                viewModel.containerViewModel.deleteExpense(expense: item)
             }
         )
         .errorAlert(

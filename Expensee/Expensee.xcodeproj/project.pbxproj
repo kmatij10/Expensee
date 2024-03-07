@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		712904E52B99CA32000C69F8 /* ErrorAlertModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712904E42B99CA32000C69F8 /* ErrorAlertModifier.swift */; };
+		712904E82B99DBAA000C69F8 /* ConfirmationAlertModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712904E72B99DBAA000C69F8 /* ConfirmationAlertModifier.swift */; };
 		716597B12B949AAB002B85F2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716597B02B949AAB002B85F2 /* Constants.swift */; };
 		71B195612B8A1867001890C9 /* ExpenseeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B195602B8A1867001890C9 /* ExpenseeApp.swift */; };
 		71B195632B8A1867001890C9 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B195622B8A1867001890C9 /* RootView.swift */; };
@@ -42,6 +43,7 @@
 
 /* Begin PBXFileReference section */
 		712904E42B99CA32000C69F8 /* ErrorAlertModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorAlertModifier.swift; sourceTree = "<group>"; };
+		712904E72B99DBAA000C69F8 /* ConfirmationAlertModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationAlertModifier.swift; sourceTree = "<group>"; };
 		716597B02B949AAB002B85F2 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		71B1955D2B8A1867001890C9 /* Expensee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Expensee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71B195602B8A1867001890C9 /* ExpenseeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseeApp.swift; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				712904E42B99CA32000C69F8 /* ErrorAlertModifier.swift */,
+				712904E72B99DBAA000C69F8 /* ConfirmationAlertModifier.swift */,
 			);
 			path = Modifiers;
 			sourceTree = "<group>";
@@ -364,6 +367,7 @@
 				71B1957C2B8A34BA001890C9 /* AddExpenseViewModel.swift in Sources */,
 				71B195B82B8B715F001890C9 /* HomeViewModel.swift in Sources */,
 				71B195B62B8B645B001890C9 /* ArcShape.swift in Sources */,
+				712904E82B99DBAA000C69F8 /* ConfirmationAlertModifier.swift in Sources */,
 				71B195912B8A6397001890C9 /* ColorExtension.swift in Sources */,
 				71B195B12B8B5EAA001890C9 /* ExpenseCategoryView.swift in Sources */,
 				71B195952B8A6902001890C9 /* CustomTextFieldView.swift in Sources */,
