@@ -83,7 +83,7 @@ A streamlined expense management app showcasing SwiftUI, CoreData, Charts, and M
 
 ## Dependencies
 
-- [Lottie](https://github.com/airbnb/lottie-spm) - Lottie is a cross-platform library that natively renders vector-based animations.
+- [Lottie](https://github.com/airbnb/lottie-ios) - Lottie is a cross-platform library that natively renders vector-based animations.
 
 ## License
 
