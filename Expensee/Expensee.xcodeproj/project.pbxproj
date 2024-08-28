@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		71061EB82C7F61E0002FECF3 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71061EB72C7F61E0002FECF3 /* Route.swift */; };
+		71061EBA2C7F61E9002FECF3 /* NavigationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71061EB92C7F61E9002FECF3 /* NavigationRouter.swift */; };
 		712904E52B99CA32000C69F8 /* ErrorAlertModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712904E42B99CA32000C69F8 /* ErrorAlertModifier.swift */; };
 		712904E82B99DBAA000C69F8 /* ConfirmationAlertModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712904E72B99DBAA000C69F8 /* ConfirmationAlertModifier.swift */; };
 		712904EA2B99DF14000C69F8 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712904E92B99DF14000C69F8 /* UserDefaults.swift */; };
@@ -48,6 +50,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		71061EB72C7F61E0002FECF3 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
+		71061EB92C7F61E9002FECF3 /* NavigationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationRouter.swift; sourceTree = "<group>"; };
 		712904E42B99CA32000C69F8 /* ErrorAlertModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorAlertModifier.swift; sourceTree = "<group>"; };
 		712904E72B99DBAA000C69F8 /* ConfirmationAlertModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationAlertModifier.swift; sourceTree = "<group>"; };
 		712904E92B99DF14000C69F8 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
@@ -100,6 +104,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		71061EB62C7F61D4002FECF3 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				71061EB72C7F61E0002FECF3 /* Route.swift */,
+				71061EB92C7F61E9002FECF3 /* NavigationRouter.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
 		712904E62B99D4DD000C69F8 /* Modifiers */ = {
 			isa = PBXGroup;
 			children = (
@@ -183,6 +196,7 @@
 		71B195702B8A242C001890C9 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				71061EB62C7F61D4002FECF3 /* Navigation */,
 				712904E62B99D4DD000C69F8 /* Modifiers */,
 				71B195B42B8B644A001890C9 /* Shape */,
 				71B1958F2B8A6389001890C9 /* Extensions */,
@@ -407,6 +421,7 @@
 				712904EA2B99DF14000C69F8 /* UserDefaults.swift in Sources */,
 				7140BCA72B9A0A8800611116 /* EmptyStateView.swift in Sources */,
 				71B195612B8A1867001890C9 /* ExpenseeApp.swift in Sources */,
+				71061EBA2C7F61E9002FECF3 /* NavigationRouter.swift in Sources */,
 				71B195A82B8B51E0001890C9 /* DictionaryExtension.swift in Sources */,
 				71B1957C2B8A34BA001890C9 /* AddExpenseViewModel.swift in Sources */,
 				71B195B82B8B715F001890C9 /* HomeViewModel.swift in Sources */,
@@ -414,6 +429,7 @@
 				712904E82B99DBAA000C69F8 /* ConfirmationAlertModifier.swift in Sources */,
 				71B195912B8A6397001890C9 /* ColorExtension.swift in Sources */,
 				71B195B12B8B5EAA001890C9 /* ExpenseCategoryView.swift in Sources */,
+				71061EB82C7F61E0002FECF3 /* Route.swift in Sources */,
 				71B195952B8A6902001890C9 /* CustomTextFieldView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

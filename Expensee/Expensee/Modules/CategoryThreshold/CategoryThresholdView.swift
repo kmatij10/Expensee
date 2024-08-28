@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CategoryThresholdView: View {
-    @Environment(\.presentationMode) private var presentationMode: Binding<PresentationMode>
+    @EnvironmentObject private var navigationRouter: NavigationRouter
     @ObservedObject var viewModel: CategoryThresholdViewModel
 
     var body: some View {
@@ -16,7 +16,7 @@ struct CategoryThresholdView: View {
             CustomNavigationView(
                 title: Constants.categoryThreshold,
                 backButtonClick: {
-                    presentationMode.wrappedValue.dismiss()
+                    navigationRouter.pop()
                 }
             )
             ScrollView(showsIndicators: false) {
@@ -38,7 +38,7 @@ struct CategoryThresholdView: View {
                     }
                     PrimaryButtonView(title: Constants.save) {
                         viewModel.saveThresholds()
-                        presentationMode.wrappedValue.dismiss()
+                        navigationRouter.pop()
                     }
                     Spacer()
                 }

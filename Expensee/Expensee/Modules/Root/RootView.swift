@@ -9,10 +9,13 @@ import SwiftUI
 
 struct RootView: View {
     var dataController: DataController
+    @StateObject private var navigationRouter = NavigationRouter()
 
     var body: some View {
-        NavigationStack {
+        NavigationStack(path: $navigationRouter.routes) {
             HomeContainerView(viewModel: HomeContainerViewModel(dataController: dataController))
+                .navigationDestination(for: Route.self) { $0 }
         }
+        .environmentObject(navigationRouter)
     }
 }

@@ -9,9 +9,8 @@ import SwiftUI
 import Charts
 
 struct HomeView: View {
+    @EnvironmentObject private var navigationRouter: NavigationRouter
     @StateObject var viewModel: HomeViewModel
-    @State private var showAddExpense = false
-    @State private var showDetails = false
     @State private var expenseDetailsModel: ExpenseDataModel?
     @State private var showingDeleteConfirmation = false
 
@@ -35,7 +34,13 @@ struct HomeView: View {
                 }
                 .frame(width: 200, height: 200)
                 PrimaryButtonView(title: Constants.monthlyDetailsAction) {
-                    showDetails = true
+                    navigationRouter.push(to: 
+                            .monthDetails(
+                                dataController: viewModel.dataController,
+                                expenses: viewModel.expenses,
+                                month: viewModel.month
+                            )
+                    )
                 }
                 HStack(spacing: 0) {
                     Text(Constants.recentTransactions)
@@ -43,7 +48,12 @@ struct HomeView: View {
                         .foregroundColor(.mainColor)
                     Spacer(minLength: 30)
                     PrimaryButtonView(title: Constants.addTransactionAction) {
-                        showAddExpense = true
+                        navigationRouter.push(to: 
+                                .addExpense(
+                                    expenseModel: expenseDetailsModel,
+                                    dataController: viewModel.dataController
+                                )
+                        )
                     }
                 }
                 .padding(.vertical, 16)
@@ -57,7 +67,12 @@ struct HomeView: View {
                                     expense: expense,
                                     action: {
                                         expenseDetailsModel = expense
-                                        showAddExpense = true
+                                        navigationRouter.push(to: 
+                                                .addExpense(
+                                                    expenseModel: expenseDetailsModel,
+                                                    dataController: viewModel.dataController
+                                                )
+                                        )
                                     },
                                     deleteAction: {
                                         expenseDetailsModel = expense
@@ -74,27 +89,6 @@ struct HomeView: View {
             .cornerRadius(4)
         }
         .padding(.horizontal, 24)
-        .navigationDestination(
-            isPresented: $showAddExpense,
-            destination: {
-                let model = AddExpenseViewModel(
-                    expenseModel: expenseDetailsModel,
-                    dataController: viewModel.dataController
-                )
-                AddExpenseView(viewModel: model)
-            }
-        )
-        .navigationDestination(
-            isPresented: $showDetails,
-            destination: {
-                let model = MonthDetailsViewModel(
-                    dataController: viewModel.dataController,
-                    expenses: viewModel.expenses,
-                    month: viewModel.month
-                )
-                MonthDetailsView(viewModel: model)
-            }
-        )
         .confirmationAlert(
             isPresented: $showingDeleteConfirmation,
             itemToDelete: $expenseDetailsModel,

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MonthDetailsView: View {
-    @Environment(\.presentationMode) private var presentationMode: Binding<PresentationMode>
+    @EnvironmentObject private var navigationRouter: NavigationRouter
     @State private var showCategoryThreshold = false
     var viewModel: MonthDetailsViewModel
 
@@ -17,7 +17,7 @@ struct MonthDetailsView: View {
             CustomNavigationView(
                 title: Constants.monthlyDetails,
                 backButtonClick: {
-                    presentationMode.wrappedValue.dismiss()
+                    navigationRouter.pop()
                 }
             )
             Group {
@@ -29,7 +29,7 @@ struct MonthDetailsView: View {
                         VStack(spacing: 15) {
                             ExpensesChartView(expensesByCategory: viewModel.expensesByCategory)
                             PrimaryButtonView(title: Constants.setThreshold) {
-                                showCategoryThreshold = true
+                                navigationRouter.push(to: .categoryThreshold)
                             }
                             LazyVStack(spacing: 10) {
                                 ForEach(viewModel.expensesByCategory, id: \.category) { expenseByCategory in
@@ -46,12 +46,5 @@ struct MonthDetailsView: View {
         .edgesIgnoringSafeArea(.all)
         .background(Color.primaryColor)
         .navigationBarHidden(true)
-        .navigationDestination(
-            isPresented: $showCategoryThreshold,
-            destination: {
-                let model = CategoryThresholdViewModel()
-                CategoryThresholdView(viewModel: model)
-            }
-        )
     }
 }

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AddExpenseView: View {
-    @Environment(\.presentationMode) private var presentationMode: Binding<PresentationMode>
+    @EnvironmentObject private var navigationRouter: NavigationRouter
     @StateObject var viewModel: AddExpenseViewModel
     @State var showTypeDropdown = false
     @State var showCategoryDropdown = false
@@ -18,7 +18,7 @@ struct AddExpenseView: View {
             CustomNavigationView(
                 title: viewModel.titleText,
                 backButtonClick: {
-                    presentationMode.wrappedValue.dismiss()
+                    navigationRouter.pop()
                 }
             )
             ScrollView(showsIndicators: false) {
@@ -85,7 +85,7 @@ struct AddExpenseView: View {
             message: viewModel.alertMessage
         )
         .onReceive(viewModel.$saveSuccessful) { close in
-            if close { presentationMode.wrappedValue.dismiss() }
+            if close { navigationRouter.pop() }
         }
     }
 }
