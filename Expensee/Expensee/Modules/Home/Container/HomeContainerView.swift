@@ -29,6 +29,6 @@ struct HomeContainerView: View {
         }
         .padding(.bottom, 5)
         .edgesIgnoringSafeArea(.all)
-        .background(Color.primaryColor)
+        .background(Color.expenseePrimaryColor)
     }
 }

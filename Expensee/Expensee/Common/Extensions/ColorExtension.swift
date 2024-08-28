@@ -11,8 +11,8 @@ import SwiftUI
 extension Color {
 
     static let mainColor = Color("mainColor")
-    static let primaryColor = Color("primaryColor")
-    static let secondaryColor = Color("secondaryColor")
+    static let expenseePrimaryColor = Color("expenseePrimaryColor")
+    static let expenseeSecondaryColor = Color("expenseeSecondaryColor")
     static let greenPrimaryColor = Color("greenPrimaryColor")
     static let redPrimaryColor = Color("redPrimaryColor")
     static let primaryButtonColor = Color("primaryButtonColor")

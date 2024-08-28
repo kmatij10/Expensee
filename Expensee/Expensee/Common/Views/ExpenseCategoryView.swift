@@ -54,7 +54,7 @@ struct ExpenseCategoryView: View {
         .padding(.top, 30)
         .padding(.bottom, 10)
         .padding(.horizontal, 14)
-        .background(Color.secondaryColor)
+        .background(Color.expenseeSecondaryColor)
         .cornerRadius(4)
     }
 

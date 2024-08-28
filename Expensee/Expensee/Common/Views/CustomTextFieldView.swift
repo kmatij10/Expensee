@@ -22,7 +22,7 @@ struct CustomTextFieldView: View {
         }
         .frame(height: 50).frame(maxWidth: .infinity)
         .accentColor(Color.mainColor)
-        .background(Color.secondaryColor)
+        .background(Color.expenseeSecondaryColor)
         .cornerRadius(4)
         .keyboardType(keyboardType)
     }

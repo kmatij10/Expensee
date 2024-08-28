@@ -64,7 +64,7 @@ struct AddExpenseView: View {
                     .frame(height: 50)
                     .frame(maxWidth: .infinity)
                     .accentColor(Color.mainColor)
-                    .background(Color.secondaryColor)
+                    .background(Color.expenseeSecondaryColor)
                     .cornerRadius(4)
                     PrimaryButtonView(title: viewModel.titleText) {
                         viewModel.saveExpense()
@@ -76,7 +76,7 @@ struct AddExpenseView: View {
         .padding(.horizontal, 24)
         .padding(.bottom, 44)
         .edgesIgnoringSafeArea(.all)
-        .background(Color.primaryColor)
+        .background(Color.expenseePrimaryColor)
         .navigationBarHidden(true)
         .scrollDismissesKeyboard(.immediately)
         .errorAlert(

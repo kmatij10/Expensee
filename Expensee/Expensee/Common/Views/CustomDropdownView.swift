@@ -45,7 +45,7 @@ struct DropdownOptionsListView: View {
             }
         }
         .padding(.vertical, 4)
-        .background(Color.secondaryColor)
+        .background(Color.expenseeSecondaryColor)
         .cornerRadius(4)
         .overlay(
             RoundedRectangle(cornerRadius: 4)
@@ -78,7 +78,7 @@ struct DropdownButtonView: View {
             .frame(height: 50)
             .background(
                 RoundedRectangle(cornerRadius: 4)
-                    .fill(Color.secondaryColor)
+                    .fill(Color.expenseeSecondaryColor)
             )
             VStack(spacing: 0) {
                 if shouldShowDropdown {

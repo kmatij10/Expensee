@@ -47,7 +47,7 @@ struct CategoryThresholdView: View {
         .padding(.horizontal, 24)
         .padding(.bottom, 44)
         .edgesIgnoringSafeArea(.all)
-        .background(Color.primaryColor)
+        .background(Color.expenseePrimaryColor)
         .navigationBarHidden(true)
         .scrollDismissesKeyboard(.immediately)
     }

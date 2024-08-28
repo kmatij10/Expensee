@@ -39,7 +39,7 @@ struct ExpenseView: View {
         }
         .frame(maxWidth: .infinity)
         .padding(10)
-        .background(Color.secondaryColor)
+        .background(Color.expenseeSecondaryColor)
         .cornerRadius(4)
         .onTapGesture {
             action()

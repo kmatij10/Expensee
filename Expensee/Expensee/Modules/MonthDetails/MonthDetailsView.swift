@@ -44,7 +44,7 @@ struct MonthDetailsView: View {
         }
         .padding(.horizontal, 24)
         .edgesIgnoringSafeArea(.all)
-        .background(Color.primaryColor)
+        .background(Color.expenseePrimaryColor)
         .navigationBarHidden(true)
     }
 }

@@ -23,7 +23,7 @@ struct HomeHeaderView: View {
         }
         .frame(maxWidth: .infinity)
         .padding(.vertical, 30)
-        .background(Color.secondaryColor)
+        .background(Color.expenseeSecondaryColor)
         .cornerRadius(4)
         HStack(spacing: 8) {
             VStack(spacing: 8) {
@@ -35,7 +35,7 @@ struct HomeHeaderView: View {
             }
             .frame(maxWidth: .infinity)
             .padding(.vertical, 20)
-            .background(Color.secondaryColor)
+            .background(Color.expenseeSecondaryColor)
             .cornerRadius(4)
             VStack(spacing: 8) {
                 Text(Constants.outcome)
@@ -46,7 +46,7 @@ struct HomeHeaderView: View {
             }
             .frame(maxWidth: .infinity)
             .padding(.vertical, 20)
-            .background(Color.secondaryColor)
+            .background(Color.expenseeSecondaryColor)
             .cornerRadius(4)
         }
     }
