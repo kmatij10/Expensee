@@ -22,6 +22,9 @@ A streamlined expense management app showcasing SwiftUI, CoreData, Charts, and M
     │   └── ExpenseeApp         # Main App Entry Point
     |
     ├── Common                  # Shared Components
+    │   ├── Navigation          # Custom SwiftUI navigation
+    │   │   ├── Route               # Possible Routes for navigation
+    │   │   └── NavigationRouter    # Navigation Router for handling navigation
     │   ├── Modifiers           # Custom SwiftUI modifiers
     │   │   ├── ConfirmationAlertModifier # Custom Alert for Confirmation
     │   │   └── ErrorAlertModifier   # Custom Alert for handling Errors
